@@ -1,0 +1,11 @@
+*.aux
+*.bbl
+*.blg
+*.log
+.DS_Store
+*~
+.*.swp
+*.out
+*.pdfsync
+*.synctex.gz
+cv.pdf

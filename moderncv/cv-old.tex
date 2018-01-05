@@ -1,0 +1,156 @@
+\documentclass[11pt,a4paper,sans]{moderncv}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+%\usepackage[firstyear=2004,lastyear=2019]{moderntimeline}
+\moderncvstyle{classic}
+\moderncvcolor{blue}
+\usepackage[a4paper,bottom=0.8in,top=0.8in,right=1.05in,left=1.05in]{geometry}
+\usepackage{lastpage}
+
+\firstname{Jonas}
+\lastname{Markussen}
+
+% Below is for casual colors
+%\patchcmd{\makecvtitle}{\color{color2!50}\@firstname}{\color{color2}\@firstname}{}{}
+%\patchcmd{\makecvtitle}{\color{color2}\@lastname}{\color{color2}\@lastname}{}{}
+
+\title{}
+%\photo[75pt][0.05pt]{jonas3}
+\email{jonassm@ifi.uio.no}
+%\mobile{+47 408 62 630}
+\social[linkedin]{jonasmarkussen}
+\social[github]{enfiskutensykkel}
+%\social[twitter]{1fiskutensykkel}
+
+%\homepage{folk.uio.no/jonassm}
+
+%\rfoot{\color{gray}\textit{\thepage/\pageref{LastPage}}}
+%\setlength{\hintscolumnwidth}{2.7cm}
+%\setlength{\hintscolumnwidth}{2.3cm} % use this with tl
+\setlength{\hintscolumnwidth}{2.1cm}
+%\tltextstart[base east]{\scriptsize}
+%\tltextend[north west]{\scriptsize}
+%\newcommand{\h}[1]{\textbf{{#1}}}
+\newcommand{\hdate}[2]{\textit{{#1} -- {#2}}\\}
+
+\AfterPreamble{\hypersetup{
+	pdfauthor={Jonas Markussen},
+	pdftitle={Jonas Markussen},
+	pdfsubject={CV for Jonas Markussen}
+}}
+
+\begin{document}
+\makecvtitle
+
+\vspace{-.5em}
+\section{Summary}
+PhD student currently involved in the Unified PCIe IO project at Simula Research Laboratory.
+Experience with programming in C, especially for Linux kernel hacking.
+Knowledgable about IP networking and the Linux kernel TCP implementation.
+Mainly interested in systems- and embedded programming, specifically performance optimisations,
+distributed systems and low-level network programming.
+I also have some experience with GPU programming (CUDA) and GPU workloads. 
+Some web back-end experience with C++ (Apache+FastCGI) and Python (mod\_wsgi/flask).
+%I'm a PhD student currently involved in the Unified PCIe IO project at Simula Research La/
+%I have a passion for systems- and embedded programming, and I'm interested in
+%distributed systems and low-level computer communication. During my education, I've
+%gained experience with Linux kernel development as well as driver programming.
+%From working in the industry, I have experience with back-end development in C++
+%and Python as well as software engineering in general.
+\vspace{.3em}
+
+%\section{Professional experience}
+\section{Experience}
+%\tlcventry[orange]{2015}{0}{PhD student}{Simula Research Laboratory AS}{}{}{
+\cventry{2015 -- \phantom{2018}}{PhD student}{Simula Research Laboratory}{}{}{
+%\hdate{02.2015}{Present}
+\hdate{February 2015}{Present}
+Working on a software framework for allowing time-sharing and dynamic virtual migration of IO devices, such as GPUs and SSDs, 
+between multiple hosts connected in a PCIe cluster, without requiring any changes to device drivers or
+applications. This involves working with PCIe NTB-based interconnects and Linux kernel module programming.
+I am also currently involved in trying to accellerate a 3D reconstruction tool using CUDA and running
+it on a PCIe cluster as a proof-of-concept workload for this framework. \\
+}
+
+%\tlcventry[olive]{2014}{2015}{Software developer}{Bridge Technologies Co AS}{}{}{
+\cventry{2014 -- 2015}{Software developer}{Bridge Technologies Co AS}{}{}{
+%\hdate{08.2014}{02.2015}
+\hdate{August 2014}{January 2015}
+C++ programmer at Bridge Tech., a company that creates digital monitoring devices and network probes.
+Worked with VB288, which is a server product that joins a PIM-SM multicast group
+and extracts content from MPEG-2 transport streams in order to run some analysis.
+I was involved in a project to extract and inspect
+CEA608/708 closed captioning data embedded into the user data of MPEG-2 and MPEG-4 AVC video streams.
+Gained experience with MPEG transport streams and video streams, as well as streaming over IP multicast.\\
+}
+
+%\tlcventry{2011}{2014}{Software development engineer}{Fotoware AS}{}{}{
+\cventry{2011 -- 2014}{Software development engineer}{Fotoware AS}{}{}{
+%\hdate{03.2011}{07.2014}
+\hdate{March 2011}{July 2014}
+C++ and Python programmer at Fotoware, a company that develops digital asset management solutions.
+Worked mainly with the back-end of FotoWeb, which is an web-based image archiving system
+with full-text metadata search and workflows based on XMP/IPTC metadata.
+Created the back-end for various REST services such as user-configurable workflows,
+a global webhook queue, hierarchical metadata taxonomy support and a CMS export tool.
+I was also involved in migrating the platform from IIS to Apache.\\
+}
+
+%\tlcventry[purple]{2010}{2011}{Part-time programmer}{Redimi AS}{}{}{
+\cventry{2010 -- 2011}{Part-time programmer}{Redimi AS}{}{}{
+%%\hdate{09.2010}{02.2011}
+\hdate{August 2010}{January 2011}
+Worked 15-20 hours per week as a Java developer next to my studies. The company made
+server monitoring solutions, and I was involved with maintaining and development of their
+database monitoring application before it was discontinued. 
+%%%As the sole programmer at the time, I got experience with most
+%%%areas of software development.
+}
+
+%\tlcventry[brown]{2009}{2011}{Teaching assistant}{Department of Informatics, UiO}{}{}{
+%\hdate{09.2009}{06.2011}
+%\begin{itemize}
+%\item{Home exam corrector in the course \emph{INF3190 Computer communication}}
+%\item{Teaching assistant in the course \emph{INF3151/4151 Operating systems}}
+%\item{Computer lab assistant in the course \emph{INF3190 Computer communication}}
+%\item{Computer lab assistant in the course \emph{INF1060 Introduction to operating systems}}
+%\end{itemize}
+%}
+
+\section{Education}
+%\tlcventry[orange]{2015}{0}{PhD, Informatics}{University of Oslo}{}{}{
+%\hdate{02.2015}{2018 (Expected)}
+%Doctoral degree in computer science. I'm doing my research at Simula.
+%}
+%\tlcventry[brown]{2010}{2014}{MSc, Informatics}{University of Oslo}{}{}{
+\cventry{2010 -- 2014}{MSc, Informatics}{University of Oslo}{}{}{
+%\hdate{09.2010}{09.2014}
+Graduate degree in computer science. My master thesis was on evaluating various latency-reducing modifications to the TCP retransmission algorithm in the Linux kernel.\\
+}
+%\tlcventry[violet]{2006}{2010}{BSc, Informatics}{University of Oslo}{}{}{
+\cventry{2006 -- 2010}{BSc, Informatics}{University of Oslo}{}{}{
+%\hdate{09.2006}{06.2010}
+Undergraduate degree in computer science. For my bachelor project we implemented an OS kernel for x86/i486 in the course {INF3151} Operating Systems.}
+
+%\section{Selected Publications}
+%\cvline{2016}{\textit{Device Lending in {PCI} Express Networks}, \scriptsize{Proceedings of the 26th International Workshop on Network and Operating Systems Support for Digital Audio and Video (NOSSDAV), Klagenfurt, Austria}}
+%\cvline{2015}{\textit{Latency and Fairness Trade-Off for Thin Streams using Redundant Data Bundling in TCP}, \scriptsize{IEEE 40th Conference on Local Computer Networks (LCN), Clearwater Beach, Florida, USA}}
+% Note to future self: only include first author articles
+%\section{Publications}
+%\cvline{2016}{\textit{Device Lending in {PCI} Networks}, ACM NOSSDAV '16}
+%\cvline{2015}{\textit{Latency and Fairness Trade-Off for Thin Streams using Redundant Data Bundling in
+%TCP}, IEEE LCN '15}
+
+%\section{Skills and knowledge}
+%\cvdoubleitem{a}{b}{c}{d}
+%\section{Skills and knowledge}
+%\cvline{\h{Development}}{Modelling and design; test-driven development; debugging; object-oriented programming; algorithms and data structures; development methods}
+%\cvline{\h{Web}}{HTTP; FastCGI; Apache with mod\_wsgi; MongoDB; PostgreSQL; SEO; web caching, reverse proxies; RESTful API design; AJAX; HTML5/CSS3; Flask}
+%\cvline{\h{Networking}}{Internet architecture; TCP; TCP/IP protocol stack; IPv4; IPv6; mobile IP; MANET; WiFi/802.11 protocol family; QOS; AQM; multicast (PIM-SM/DM); congestion control; routing algorithms; SCTP; network components}
+%\cvline{\h{Architecture}}{Linux kernel; low-level and asynchronous programming; x86 architecture; multi-threading; driver/kernel module programming; digital circuit design; multi-core architectures; GPU programming (CUDA); run-time optimisations; Atmel microcontrollers; programmable logic (FPGA); SIMD; PCI express}
+%\cvline{\h{Languages}}{GNU C and C99/C11; C++11 with Boost; Python 2.7; JavaScript with jQuery; VHDL; Java 7; PHP 5; Bash; SQL; GAS assembly (IA-32/x86-64)}
+
+%\section{References}
+%Complete work history, publication list, as well as work references are available upon request.
+
+\end{document}
