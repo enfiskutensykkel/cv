@@ -1,4 +1,4 @@
-\documentclass[a4paper,11pt,notitlepage]{article}
+\documentclass[a4paper,10pt,notitlepage]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[english]{babel}
@@ -6,14 +6,22 @@
 \usepackage{fullpage}
 \usepackage{parskip}
 \usepackage{pdfpages}
+%\usepackage{array}
+%\usepackage{tabularx}
+%\usepackage{booktabs}
+%\usepackage{siunitx}
+\usepackage{adjustbox}
+\usepackage{multirow}
+\usepackage{makecell}
+\usepackage{enumitem}
 \usepackage{pdfsync}
 \usepackage{helvet}
-\usepackage[a4paper,left=1in,right=1in,top=1in,bottom=1in]{geometry}
+\usepackage[a4paper,left=.4in,right=.4in,top=.4in,bottom=.4in]{geometry}
 \usepackage{lastpage}
 \usepackage{xcolor}
 \AtBeginDocument{\color{darkgray}}
-\usepackage{tikz}
-\usepackage{marvosym}
+
+\definecolor{infoboxcolor}{gray}{.97}
 
 \usepackage[]{hyperref}
 \hypersetup{
@@ -24,123 +32,69 @@
 	pdfpagemode=UseOutlines,
 	breaklinks,
 	linktoc=all,
-	hidelinks
+	colorlinks=true,
+	urlcolor=darkgray,
+	linkcolor=darkgray,
+	citecolor=darkgray
 }
 
-\definecolor{color2}{rgb}{0,0,0}
+\input{icons}
 
-\newcommand*{\marvosymbol}[1]{{\fontfamily{mvs}\fontencoding{U}\fontseries{m}\fontshape{n}\selectfont\char#1}}
-\newcommand*{\mobilephonesymbol}   {\marvosymbol{72}~}
-\newcommand*{\fixedphonesymbol}    {\marvosymbol{84}~}
-\newcommand*{\faxphonesymbol}      {\marvosymbol{117}~}
-\newcommand*{\emailsymbol}         {\large\marvosymbol{66}~}
-\newcommand*{\homepagesymbol}      {{\Large\marvosymbol{205}}~}
-\newcommand*{\linkedinsocialsymbol}{%
-  \protect\raisebox{-0.165em}{%
-    \protect\begin{tikzpicture}[x=0.08em, y=0.08em, xscale=0.25, yscale=-0.25, inner sep=0pt, outer sep=0pt]
-      \protect\begin{scope}[cm={{0.60,0.0,0.0,0.60,(346.39,123.07)}}]
-        \protect\path[fill=color2]
-          (381,202) -- (434,202) .. controls (439,202) and (442,205) ..
-          (442,210) -- (442,264) .. controls (442,268) and (439,272) ..
-          (434,272) -- (381,272) .. controls (376,272) and (372,268) ..
-          (372,264) -- (372,210) .. controls (372,205) and (376,202) ..
-          (381,202) -- cycle;
-        \protect\begin{scope}[xscale=0.98, yscale=1.02, fill=white]
-          \protect\path[fill=white]
-            (403,253) -- (403,224) -- (394,224) -- (394,253) --
-            cycle(398,211) .. controls (397,211) and (395,212) ..
-            (395,213) .. controls (394,213) and (393,215) ..
-            (393,216) .. controls (393,217) and (394,218) ..
-            (395,219) .. controls (395,220) and (397,220) ..
-            (398,220) .. controls (400,220) and (401,220) ..
-            (402,219) .. controls (402,218) and (403,217) ..
-            (403,216) .. controls (403,215) and (402,213) ..
-            (402,213) .. controls (401,212) and (400,211) ..
-            (398,211) -- cycle;
-          \protect\path[fill=white]
-            (410,253) -- (419,253) --
-            (419,236) .. controls (419,236) and (419,235) ..
-            (419,235) .. controls (419,235) and (419,234) ..
-            (419,234) .. controls (419,233) and (420,232) ..
-            (421,232) .. controls (422,231) and (423,231) ..
-            (424,231) .. controls (425,231) and (427,231) ..
-            (427,232) .. controls (428,234) and (428,235) ..
-            (428,237) -- (428,253) -- (437,253) --
-            (437,236) .. controls (437,232) and (436,228) ..
-            (434,226) .. controls (433,224) and (430,223) ..
-            (427,223) .. controls (425,223) and (423,224) ..
-            (421,225) .. controls (420,226) and (419,227) ..
-            (418,228) -- (418,228) -- (417,224) --
-            (410,224) .. controls (410,225) and (410,227) ..
-            (410,228) .. controls (410,230) and (410,231) ..
-            (410,233) -- cycle;
-        \protect\end{scope}%
-      \protect\end{scope}%
-    \protect\end{tikzpicture}}%
-  ~}
-
-\setlength{\parindent}{0em}
-\setlength{\parskip}{1em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{2em}
+\linespread{1.2}
 \renewcommand{\baselinestretch}{.9}
+
 \renewcommand{\familydefault}{\sfdefault}
+
+\setlist[itemize]{leftmargin=*,rightmargin=0pt}
+
 %\renewcommand{\bfdefault}{sb}
 
 \titleformat{\section}[hang]{\large\bfseries}{}{0pt}{\textsc}[\titlerule]
-\titlespacing{\section}{0pt}{0pt}{0pt}
+\titlespacing{\section}{0pt}{0pt}{1em}
+\titleformat{\subsection}[hang]{\large\bfseries}{}{0pt}{\textsc}[\titlerule]
+\titlespacing{\subsection}{0pt}{0pt}{1em}
 
-%\title{Jonas Markussen}
-%\author{Jonas Markussen}
-%\date{}
-
-\newcommand{\lcolsize}{.6\linewidth}
-\newcommand{\rcolsize}{.35\linewidth}
+\newcommand{\lcolsize}{.60\textwidth}
+\newcommand{\rcolsize}{.35\textwidth}
 
 \begin{document}
 \pagestyle{empty}
 
-\begin{minipage}[t][3em][b]{\lcolsize}
-	\huge\textbf{Jonas Markussen}\\
-	\Large{PhD Student}
-	\vspace{2em}
+\begin{minipage}[t][2cm][c]{\lcolsize}
+	{\huge\textbf{Jonas Markussen}}\\[1.2em]
+	{\Large{PhD Student and Software Developer}}
 \end{minipage}%
-\hspace{1em}%
-\begin{minipage}[t]{\rcolsize}
-
-\linkedinsocialsymbol{}
-\emailsymbol{}
+\hfill%
+\protect\begin{minipage}[t][2cm][c]{\rcolsize}
+	\begin{adjustbox}{max width=\textwidth}
+	\fcolorbox{black}{infoboxcolor}{
+		%\centering
+		\begin{tabular*}{\linewidth}{r|l}
+			\mobilephonesymbol{} & {{+47 40 86 26 30}}\\
+			\emailsymbol{} &
+			{\href{mailto:jonassm@ifi.uio.no}{{jonassm@ifi.uio.no}}} \\
+			\linkedinsymbol{} &
+			{\href{https://www.linkedin.com/in/jonasmarkussen}{{jonasmarkussen}}} \\
+			\githubsymbol{} &
+			{\href{https://github.com/enfiskutensykkel}{{enfiskutensykkel}}} \\
+		\end{tabular*}
+	}
+	\end{adjustbox}
 \end{minipage}
 
-\begin{minipage}[t]{\lcolsize}
-\section{Work Experience}
-test
+%\bigskip
 
-test
-
-test
-
-test
-
-test
-
-test
-
-test
-
-
-
-test
-
+\begin{minipage}[t][][t]{\lcolsize}
+	\input{exp}
 \end{minipage}%
-\hspace{1em}%
-\begin{minipage}[t]{\rcolsize}
-\section{Education}
-\section{Highlighted Projects}
-t
-t
+\hfill%
+\begin{minipage}[t][][t]{\rcolsize}
+	\input{part}
+	\bigbreak
+	\input{edu}
+	\bigbreak
+	\input{pub}
 \end{minipage}
-
-\begin{minipage}[b][][b]{\linewidth}
-\section{Selected Publications}
-\end{minipage}
-
 \end{document}
