@@ -8,22 +8,22 @@
 	\bigskip
 	Worked on a framework for distributed IO in a PCIe cluster in
 	collaboration with Dolphin Interconnect Solutions. Gained
-	experience with PCIe NTBs, high-speed interconnects, RDMA, memory
-	architectures, NVM Express, GPU programming, and driver development for
-	the Linux kernel.
+	experience with PCI Express,  NTBs, high-speed interconnects, RDMA, memory
+	architectures, NVM Express, GPU programming, and driver development for Linux.
 
 	\bigskip
 	\begin{itemize}
-		\item{Investigated performance issue with Intel IOMMU for PCIe
-			peer-to-peer transfers for SmartIO Device Lending.}\\[-.6em]
 		\item{Implemented hypervisor (KVM) support using VFIO mediated device drivers
-			for passing through SmartIO devices to a VM.}\\[-.6em]
-		\item{Contributed to the design and development of the SmartIO
+			for passing through SmartIO Device Lending devices to a VM.}\\[-.6em]
+		\item{Contributed to the design, development and testing of the SmartIO
 			extension to the SISCI API.}\\[-.6em]
-		\item{Created library for developing distributed storage
+		\item{Created a library for developing distributed storage
 			applications using SmartIO extension to SISCI.
 			As proof of concept, I used this library in a CUDA program to demonstrate direct
-			IO between GPUs and NVMe disks a cluster.}\\[-.6em]
+			IO between GPUs and NVMe disks a cluster without
+			involving CPU in the data path.}\\[-.6em]
+		\item{Investigated performance issue with Intel IOMMU for PCIe
+			peer-to-peer transfers for SmartIO Device Lending.}\\[-.6em]
 		\item{Developed various RDMA performance benchmarking tools.}
 	\end{itemize}
 	\bigskip
@@ -39,7 +39,7 @@
 	\bigskip
 	Worked at a company that made hardware probes and software
 	for real-time analysis of IPTV and OTT digital video and network
-	traffic. Got experience with MPEG video encoding, PIM-SM multicasting, transport
+	traffic. Got experience with video encoding, PIM-SM multicasting, MPEG transport
 	streams, working with C++ in an embedded environment, and TCP
 	traffic analysis.
 
@@ -47,8 +47,9 @@
 	\begin{itemize}
 		\item{Implemented a MPEG-2 and MPEG-4/AVC video stream parser for  the
 			VB288 content extractor.}\\[-.6em]
-		\item{Created a validator for CEA608/708 closed captioning data
-		embedded into MPEG-2 and MPEG-4 video streams.}
+		\item{Made a validator for CEA608/708 closed captioning data
+		embedded into MPEG-2 and MPEG-4 video streams with real-time
+			error notifications.}
 	\end{itemize}
 	\bigskip
 	\bigskip
@@ -63,21 +64,23 @@
 	\bigskip
 	Worked mainly with the back-end of FotoWeb, a web-based image and video
 	archiving system with full-text metadata search and workflows based on
-	metadata tags. Gained experience working with creating C++/FastCGI and
-	Python/mod\_wsgi/Flask endpoints for REST services over HTTP.
+	metadata tags. Gained experience working with WinAPI, MongoDB, web
+	caches and load balancing, as well as REST services and creating HTTP endpoints with C++/FastCGI and Python/mod\_wsgi (Flask).
 
 	\bigskip
 	\begin{itemize}
-		\item{Implemented a hierarchical metadata taxonomy tree that could handle creation
-		and assignment of tens of thousands of metadata tags within
+		\item{Implemented a hierarchical metadata taxonomy tree that
+			supported CRUD operations and assignment to assets of tens of thousands of metadata tags within
 			milliseconds.}\\[-.6em]
-		\item{Created a configurable workflow utility allowing users to
-			design custom pipelines for processing assets.}\\[-.6em]
+		\item{Created a configurable workflow engine allowing users to
+			create custom pipelines and workloads for processing assets based on
+			metadata tags.}\\[-.6em]
 		\item{Made a background job scheduler with support for
-			webhooks and asynchronous message-passing.}\\[-.6em]
-		\item{Implemented both back-end and front-end for exporting and
-			managing exports to an external CMS.}\\[-.6em]
-		\item{Contributed to migrating the existing code base from
-		using IIS to Apache as server.}
+			webhooks and asynchronous message-passing as well as
+			bulk file operations.}\\[-.6em]
+		\item{Implemented both back-end and front-end for exporting
+			assets to an external CMS and an access 
+			management UI for these exports.}\\[-.6em]
+		\item{Contributed to migrating the existing code base from IIS to Apache.}
 	\end{itemize}
 }
