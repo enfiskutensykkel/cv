@@ -1,34 +1,21 @@
 \section{Selected Publications}
-\small{%
-\parbox[t][][t]{\linewidth}{
-	\parbox{\linewidth}{\textit{``Flexible device sharing in PCIe clusters using Device Lending''}}
-	\smallbreak
-	\parbox{\linewidth}{{Markussen et al.}, {ACM ICPP Comp., Aug. 2018}}
+
+\newcommand{\pub}[4]{
+	\begin{footnotesize}
+	\parbox[t][][t]{\linewidth}{%
+		\parbox{\linewidth}{\textit{``#4''}}
+		\parbox{\linewidth}{{#2}, {#1}}
+		\parbox{\linewidth}{{\href{https://doi.org/#3}{#3}}}
+	}
+	\end{footnotesize}
 	\bigbreak
 }
 
-\parbox[t][][t]{\linewidth}{
-	\parbox{\linewidth}{\textit{``Device Lending in PCI Express networks''}}
-	\smallbreak
-	\parbox{\linewidth}{{Kristiansen et al.}, {ACM NOSSDAV, May 2016}}
-	\bigbreak
-}
+\pub{Sep. 2019}{Cluster Computing}{10.1007/s10586-019-02988-0}{Flexible device compositions and dynamic resource
+sharing in PCIe interconnected clusters using Device~Lending}
 
-\parbox[t][][t]{\linewidth}{
-	\parbox{\linewidth}{\textit{``Latency and fairness trade-off for thin streams using redundant data
-	bundling in TCP''}}
-	\smallbreak
-	\parbox{\linewidth}{{Opstad et al.}, {IEEE LCN, Oct. 2015}}
-}
+\pub{Aug. 2018}{ACM ICPP Companion}{10.1145/3229710.3229759}{Flexible device sharing in PCIe clusters using
+Device~Lending}
 
-}
-
-%\parbox[t][][t]{\linewidth}{
-%	\parbox{\linewidth}{{``Experimentally finding the right aggressiveness
-%	for retransmissions in thin TCP streams''}}
-%	\smallbreak
-%	\parbox{\linewidth}{\emph{University of Oslo, Aug. 2014}}
-%	\smallbreak
-%	Master thesis.
-%	\bigbreak
-%}
+\pub{Oct. 2015}{IEEE LCN}{10.1109/LCN.2015.7366322}{Latency and fairness trade-off for thin streams using
+Redundant Data Bundling in TCP}
