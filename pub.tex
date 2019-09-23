@@ -2,23 +2,25 @@
 
 \newcommand{\pub}[5]{
 	\parbox[t][][t]{\linewidth}{%
-		\parbox{\linewidth}{\small\textit{``#4''}}
+		\begin{small}
+		\parbox{\linewidth}{{``#4''}}
 		\smallbreak
-		\parbox{\linewidth}{\small{#2}, {#1}}
+		\parbox{\linewidth}{{#2}, {#1}}
 		%\parbox{\linewidth}{\small{Keywords:}\footnotesize{ #5}}
-		\parbox{\linewidth}{\small{DOI: {\href{https://doi.org/#3}{#3}}}}
+		\parbox{\linewidth}{{\href{https://doi.org/#3}{#3}}}
+		\end{small}
 	}
 	\bigbreak
 	\smallskip
 }
 
-\pub{Sep. 2019}{Cluster Computing, Invited}{10.1007/s10586-019-02988-0}{Flexible device compositions and dynamic resource
+\pub{Sep. 2019}{Cluster Computing (Invited)}{10.1007/s10586-019-02988-0}{Flexible device compositions and dynamic resource
 sharing in PCIe interconnected clusters using Device~Lending}{%
 Virtualization; KVM; Peer-to-Peer; Qemu; NTB; Virtual Machines; Cloud Computing;
 Composable Infrastructure;
 }
 
-\pub{Aug. 2018}{SRMPDS, Best paper}{10.1145/3229710.3229759}{Flexible device sharing in PCIe clusters using
+\pub{Aug. 2018}{SRMPDS (Best paper)}{10.1145/3229710.3229759}{Flexible device sharing in PCIe clusters using
 Device~Lending}{%
 Paravirtualizaiton; KVM, Virtual Machines;
 }
