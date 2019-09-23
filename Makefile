@@ -1,8 +1,8 @@
 TEXFILE := cv
 
-.PHONY: all clean
+.PHONY: default clean 
 
-all:
+default:
 	pdflatex -synctex=1 $(TEXFILE)
 	pdflatex -synctex=1 $(TEXFILE)
 

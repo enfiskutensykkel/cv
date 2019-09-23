@@ -1,144 +1,67 @@
-\section{Work Experience}
-\parbox[t][][t]{\linewidth}{
-	\parbox{\linewidth}{
-		\textbf{Software Architect (R\&D)}
-			\hfill
-			{Sep. 2018 --- \phantom{XXX. 0000}}
-		}
-	\smallbreak
-	%\smallskip
-	\parbox{\linewidth}{Dolphin Interconnect Solutions}
-	\bigskip
+\section{Software Engineering Experience}
+\begin{experience}{Dolphin Interconnect Solutions}{
+	\position{Software Architect}{2019}{\phantom{0000}}
+	\position{Senior Software Engineer}{2018}{2019}
 }
-\parbox[t][][t]{\linewidth}{
-	{\parbox{\linewidth}{
-		\parbox{\linewidth}{
-			\textbf{PhD Student}
-			\hfill
-			{Feb. 2015 --- Sep. 2018}
-		}
-	}}
-	\smallbreak
-	\parbox{\linewidth}{Simula Research Laboratory}
+Contributed to the SmartIO framework for high-performance, distributed I/O and resource sharing,
+in PCIe shared-memory clusters. 
+Gained experience with PCIe, non-transparent bridging, cluster interconnects, RDMA, distributed shared-memory
+architectures, NVMe, GPU programming, Nvidia GPUDirect, driver development and Linux kernel hacking.
 
-%	\parbox{\linewidth}{\textbf{Software Architect}
-%		\hfill {{Sep. 2018 --- \phantom{XXX. 0000}}}}
-%		\smallbreak
-%	\parbox{\linewidth}{Dolphin Interconnect Solutions}
-%	\smallbreak
-%	\parbox{\linewidth}{\textbf{PhD Student}
-%		\hfill {{Feb. 2015 --- \phantom{Jun. 2019}}}}
-%		\smallbreak
-%	\parbox{\linewidth}{Simula Research Laboratory\\and University of Oslo}
-	
-	\bigskip
-	Collaboration with Dolphin Interconnect Solutions.
-	Developed a framework for high-performance, distributed I/O, resource sharing,
-	and composable architectures in PCIe clusters. 
-	Gained experience with PCIe, NTBs, high-speed interconnects, RDMA, distributed shared-memory
-	architectures, NVMe, GPU programming, Nvidia GPUDirect, driver development and low-level kernel hacking.
-%	Worked on a framework for distributed high-performance IO in a PCIe cluster in
-%	collaboration with Dolphin Interconnect Solutions. 
-%	Gained
-%	experience with PCIe, NTBs, high-speed interconnects, RDMA, memory
-%	architectures, NVMe, GPU programming, and driver development for Linux.
+\begin{contribs}
+	\item{Contributed to the design, implementation and evaluation of SmartIO.}
+	\item{Created a distributed device driver for simultaneous sharing of a non-SR-IOV NVMe among multiple hosts in a cluster.}
+	\item{Implemented Linux KVM hypervisor support using VFIO mediated device drivers
+		for assigning remote physical devices to VMs (pass-through).}
+	\item{Developed a storage framework based on SmartIO and GPUDirect, providing
+		zero-copy raw block access to NVMes from multiple GPUs in the cluster without involving CPU in the data path.}
+	\item{Developed various DMA and RDMA cluster benchmarking tools.}
+\end{contribs}
+\end{experience}
 
-	\bigskip
-	\begin{itemize}
-		\item{Implemented Linux KVM hypervisor support using VFIO mediated device drivers
-			for passing through physically remote devices to a local VM.}\\[-.6em]
-		\item{Contributed to the design and development of the SmartIO
-			extension to the SISCI shared-memory API. Extensive testing and development of
-			DMA/RDMA benchmarking tools.}\\[-.6em]
-%		\item{Created a library for developing distributed storage
-%			applications using SmartIO extension to SISCI.
-%			As proof of concept, I used this library in a CUDA program to demonstrate direct
-%			IO between GPUs and NVMe disks a cluster without
-%			involving CPU in the data path.}\\[-.6em]
-		\item{Created a software library and userspace NVMe driver 
-			for developing distributed storage applications using SmartIO.
-			Demonstrated concurrent, zero-copy and direct block-level access to NVMe drives from
-			multiple GPUs in the cluster without involving CPU in the data path.}\\[-.6em]
-		\item{Investigated performance issue with Intel IOMMUs and
-			implemented support for PCIe peer-to-peer transfers for SmartIO devices.}\\[-.6em]
-	\end{itemize}
-	\bigskip
-	\bigskip
+\begin{experience}{Bridgetech}{
+		\position{Embedded \& Systems Software Developer}{2014}{2015}
 }
+Worked with online analysis of digital video over network.
+Got experience with video encoding, PIM-SM multicasting, MPEG 
+streams, working with C++ in an embedded environment, and
+network traffic analysis.
 
-\parbox[t][][t]{\linewidth}{
-	\parbox{\linewidth}{
-		\textbf{Software Developer}
-		\hfill {{Aug. 2014 --- Feb. 2015}}
-	}
-	\smallbreak
-	\parbox{\linewidth}{Bridge Technologies}
+\begin{contribs}
+	\item{Contributed to an MPEG transport stream parser for the VB288 content extractor using libpcap for live capturing
+		IPTV.}
+	\item{Implemented a parser for MPEG-2 and MPEG-4/AVC video streams in order to extract and
+		validate CEA608/708 closed captioning data and provide real-time event
+		notifications.}
+\end{contribs}
+\end{experience}
 
-	\bigskip
-%	Worked at a company that made hardware and software
-%	for real-time analysis of IPTV and OTT digital video and network
-%	traffic. Got experience with video encoding, PIM-SM multicasting, MPEG transport
-%	streams, working with C++ in an embedded environment, and
-%	network traffic analysis.
-
-	Gained experience with analysing IPTV and OTT digital video, network traffic analysis,
-	PIM-SM multicasting, and working with embedded C++.
-%	Implemented an MPEG-4/AVC video stream parser in order to extract and
-%			validate CEA608/708 closed captioning data and provide real-time notifications.
-
-	\bigskip
-	\begin{itemize}
-		\item{Implemented a real-time MPEG transport stream parser for the VB288 content extractor using libpcap for live capturing
-			multicast IPTV video.}\\[-.6em]
-		\item{Implemented parser for MPEG-2 and MPEG-4/AVC video streams in order to extract and
-			validate CEA608/708 closed captioning data and provide real-time event notifications.}
-
-%		\item{Implemented a MPEG-2 and MPEG-4/AVC video stream parser for the
-%			VB288 content extractor using libpcap for live network
-%			traffic capturing.}\\[-.6em]
-%		\item{Made a validator for CEA608/708 closed captioning data
-%		embedded into MPEG-2 and MPEG-4 video streams with real-time
-%			error notifications.}
-	\end{itemize}
-	\bigskip
-	\bigskip
+\begin{experience}[last]{Fotoware}{
+	\position{Software Development Engineer (Back-end)}{2013}{2014}
+	%\position{Front-End Developer}{2011}{2013}
 }
+Worked mainly with FotoWeb, a web-based image and video
+archiving system with full-text metadata search and workflows based on
+metadata tags. Gained experience working with Apache2, MongoDB, web
+caches, designing REST services from the ground up, and creating HTTP endpoints with C++ (FastCGI)
+and Python (Flask).
 
+\begin{contribs}
+	\item{Implemented a hierarchical metadata taxonomy tree that
+		supported CRUD operations and assignment to assets of tens of thousands of metadata tags within
+		milliseconds.}
+	\item{Created a configurable workflow engine allowing users to
+		create custom pipelines and workloads for processing assets based on
+		metadata tags.}
+	\item{Made a background job scheduler with support for
+		webhooks and asynchronous message-passing as well as
+		bulk file operations.}
+	\item{Implemented both back-end and front-end for exporting
+		assets to an external CMS and an access 
+		management UI for these exports.}
+	%\item{Contributed to migrating the existing code base from IIS to Apache.}
+\end{contribs}
+\end{experience}
 
-%%% Full time. Feb. 2013 -- Aug. 2014
-%%% Part time Mar 2011 -- Jun 2012
-\parbox[t][][t]{\linewidth}{
-	{\hfill\parbox{\linewidth}{
-		\parbox{\linewidth}{
-			\textbf{Software Development Engineer}
-			\hfill
-			{Feb. 2013 --- Aug. 2014}
-		}
-	}}
-	\smallskip
-	\parbox{\linewidth}{Fotoware}
+%\shortexperience[last]{Redimi}{\position{Java Programmer}{2010}{2011}}
 
-	\bigskip
-	Worked mainly with the back-end of FotoWeb, a web-based image and video
-	archiving system with full-text metadata search and workflows based on
-	metadata tags. Gained experience working with Apache2, MongoDB, web
-	caches, designing REST services from the ground up, and creating HTTP endpoints with C++ (FastCGI)
-	and Python (Flask / mod\_wsgi).
-
-	\bigskip
-	\begin{itemize}
-		\item{Implemented a hierarchical metadata taxonomy tree that
-			supported CRUD operations and assignment to assets of tens of thousands of metadata tags within
-			milliseconds.}\\[-.6em]
-		\item{Created a configurable workflow engine allowing users to
-			create custom pipelines and workloads for processing assets based on
-			metadata tags.}\\[-.6em]
-		\item{Made a background job scheduler with support for
-			webhooks and asynchronous message-passing as well as
-			bulk file operations.}\\[-.6em]
-		\item{Implemented both back-end and front-end for exporting
-			assets to an external CMS and an access 
-			management UI for these exports.}\\[-.6em]
-		%\item{Contributed to migrating the existing code base from IIS to Apache.}
-	\end{itemize}
-}

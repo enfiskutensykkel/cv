@@ -1,24 +1,19 @@
 \documentclass[a4paper,10pt,notitlepage]{article}
+%\usepackage[a4paper,left=.4in,right=.4in,top=.3in,bottom=.3in]{geometry}
+\usepackage[cm,empty]{fullpage}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[english]{babel}
 \usepackage{titlesec}
-\usepackage{fullpage}
 \usepackage{parskip}
 \usepackage{pdfpages}
-%\usepackage{array}
-%\usepackage{tabularx}
-%\usepackage{booktabs}
-%\usepackage{siunitx}
 \usepackage{adjustbox}
-\usepackage{multirow}
-\usepackage{makecell}
 \usepackage{enumitem}
 \usepackage{pdfsync}
-\usepackage{helvet}
-\usepackage[a4paper,left=.4in,right=.4in,top=.4in,bottom=.4in]{geometry}
-\usepackage{lastpage}
+\usepackage[scaled=.92]{helvet}
 \usepackage{xcolor}
+\usepackage{ragged2e}
+\usepackage{ifthen}
 \AtBeginDocument{\color{darkgray}}
 
 \definecolor{infoboxcolor}{gray}{.97}
@@ -41,35 +36,118 @@
 
 \input{icons}
 
+% Set spacing and stuff
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{2em}
-\linespread{1.2}
-\renewcommand{\baselinestretch}{.9}
+\linespread{1.1}
+\renewcommand{\baselinestretch}{.82}
+\setlist[itemize]{leftmargin=*,rightmargin=0pt,itemsep=2pt,topsep=2pt}
 
+
+% Override fonts
 \renewcommand{\familydefault}{\sfdefault}
-
-\setlist[itemize]{leftmargin=*,rightmargin=0pt}
-
 %\renewcommand{\bfdefault}{sb}
-
-\titleformat{\section}[hang]{\large}{}{0pt}{\textsc}[\titlerule]
+\titleformat{\section}[hang]{\normalsize}{}{0pt}{\textsc}[\titlerule]
 \titlespacing{\section}{0pt}{0pt}{1em}
-\titleformat{\subsection}[hang]{\large}{}{0pt}{\textsc}[\titlerule]
+\titleformat{\subsection}[hang]{\normalsize}{}{0pt}{\textsc}[\titlerule]
 \titlespacing{\subsection}{0pt}{0pt}{1em}
 
+
+% Set size of columns
+\newcommand{\hmargin}{1.090cm} % 1.8cm is ideal, but no space
 \newcommand{\lcolsize}{.60\textwidth}
 \newcommand{\rcolsize}{.35\textwidth}
 
 
+% Position
+% Arguments: Title, from, to
+\newcommand{\position}[3]{%
+	\parbox{\linewidth}{%
+		{\ignorespaces \textbf{#1}}
+		\hfill
+		{\ignorespaces {#2}} --- {\ignorespaces {#3}}
+	}\smallskip
+}
+
+
+% Contributions
+\newenvironment{contribs}{%
+	\begin{normalsize}%
+		\begin{itemize}
+
+}{%
+		\end{itemize}%
+	\end{normalsize}
+}
+
+% Education
+% Arguments: Degree, from, to, institution, additional explanation
+\newcommand{\education}[6][]{%
+	\parbox[t][][t]{\linewidth}{%
+		\parbox{\linewidth}{%
+			{\ignorespaces \textbf{#2}}
+			\hfill
+			{\ignorespaces {#3}} --- {\ignorespaces {#4}}
+		}
+		\parbox{\linewidth}{{\ignorespaces {#5}}}
+		\parbox{\linewidth}{{\ignorespaces {#6}}}
+	}\ifthenelse{\equal{#1}{}}{\bigskip}{}
+}
+
+% Experience environment
+% Arguments: Company, position(s)
+\newenvironment{experience}[3][]{%
+	\ifthenelse{\equal{#1}{}}{\def\last{false}}{\def\last{true}}
+	{\ignorespaces #3}
+	\parbox{\linewidth}{\noindent\ignorespaces {#2}}%
+	\\[1em]
+	\begin{normalsize}%
+	\ignorespaces%
+}{%
+	\ignorespacesafterend%
+	\end{normalsize}%
+	\ifthenelse{\equal{\last}{true}}{}{\smallskip\bigskip}%
+}
+
+% Short-hand command for experience (without explanation)
+% Arguments: Company, position(s)
+\newcommand{\shortexperience}[3][]{%
+	{\ignorespaces #3}
+	\parbox{\linewidth}{\noindent\ignorespaces {#2}}%
+	\ifthenelse{\equal{#1}{}}{\smallskip\bigskip}{}%
+}
+
+
+% Publication
+% Arguments: DOI, Date, Venue, Authors, Title
+\newcommand{\publication}[6][]{%
+	\footnotesize{\noindent\ignorespaces{#5}}:
+	\small{\noindent\ignorespaces\textit{\href{https://doi.org/#2}{#6}}}.
+	\footnotesize{\noindent\ignorespaces{#4} (\noindent\ignorespaces{#3}).
+	DOI:~{\href{https://doi.org/#2}{#2}}}
+}
+
+
+% Generic entry (skills, projects, etc)
+% Arguments: title, description
+\newcommand{\entry}[3][]{%
+	\parbox{\linewidth}{%
+	\begin{small}\justifying%
+	\textbf{\noindent\ignorespaces{#2}} -- {\noindent\ignorespaces#3}%
+	\end{small}%
+	}\ifthenelse{\equal{#1}{}}{\bigskip}{}%
+}
+
+
+
 \begin{document}
 \pagestyle{empty}
-
-\begin{minipage}[t][1.8cm][c]{\lcolsize}
-	{\huge\textbf{Jonas Markussen}}\\[1.2em]
-	{\Large{Software Architect and PhD Candidate}}
+\begin{minipage}[t][\hmargin][c]{\lcolsize}
+	{\huge\textbf{Jonas Markussen}}\\[1.1em]
+	{\Large{R\&D Software Engineer and PhD}}
 \end{minipage}%
 \hfill%
-\protect\begin{minipage}[t][1.8cm][c]{\rcolsize}
+\protect\begin{minipage}[t][\hmargin][c]{\rcolsize}
 	\begin{adjustbox}{max width=\textwidth}
 	\fcolorbox{black}{infoboxcolor}{
 		%\centering
@@ -91,15 +169,18 @@
 
 \begin{minipage}[t][][t]{\lcolsize}
 	\input{exp}
+	\bigskip
+	\input{pub}
 \end{minipage}%
 \hfill%
 \begin{minipage}[t][][t]{\rcolsize}
 	\input{edu}
-	\bigbreak
+	\bigskip
 	\input{part}
-	\bigbreak
+	\smallskip
 	\input{skills}
-	\bigbreak
-	\input{pub}
+	\bigskip
+	\input{proj}
 \end{minipage}
+
 \end{document}
