@@ -52,9 +52,9 @@
 
 %\renewcommand{\bfdefault}{sb}
 
-\titleformat{\section}[hang]{\large\bfseries}{}{0pt}{\textsc}[\titlerule]
+\titleformat{\section}[hang]{\large}{}{0pt}{\textsc}[\titlerule]
 \titlespacing{\section}{0pt}{0pt}{1em}
-\titleformat{\subsection}[hang]{\large\bfseries}{}{0pt}{\textsc}[\titlerule]
+\titleformat{\subsection}[hang]{\large}{}{0pt}{\textsc}[\titlerule]
 \titlespacing{\subsection}{0pt}{0pt}{1em}
 
 \newcommand{\lcolsize}{.60\textwidth}
@@ -66,7 +66,7 @@
 
 \begin{minipage}[t][1.8cm][c]{\lcolsize}
 	{\huge\textbf{Jonas Markussen}}\\[1.2em]
-	{\Large{Software Engineer and PhD Candidate}}
+	{\Large{Software Architect and PhD Candidate}}
 \end{minipage}%
 \hfill%
 \protect\begin{minipage}[t][1.8cm][c]{\rcolsize}
@@ -94,11 +94,11 @@
 \end{minipage}%
 \hfill%
 \begin{minipage}[t][][t]{\rcolsize}
-	\input{part}
-	\bigbreak
 	\input{edu}
 	\bigbreak
 	\input{skills}
+	\bigbreak
+	\input{part}
 	\bigbreak
 	\input{pub}
 \end{minipage}
