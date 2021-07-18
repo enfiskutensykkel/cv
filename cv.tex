@@ -1,5 +1,5 @@
 \documentclass[a4paper,10pt,notitlepage]{article}
-\usepackage[a4paper,left=1.6cm,right=1.6cm,top=1.2cm,bottom=1.6cm]{geometry}
+\usepackage[a4paper,left=1.6cm,right=1.6cm,top=.8cm,bottom=1.6cm]{geometry}
 %\usepackage[cm,empty]{fullpage}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -10,7 +10,7 @@
 \usepackage{adjustbox}
 \usepackage{enumitem}
 \usepackage{pdfsync}
-\usepackage[scaled=.92]{helvet}
+\usepackage[scaled=.94]{helvet}
 \usepackage{xcolor}
 \usepackage{ragged2e}
 \usepackage{ifthen}
@@ -54,7 +54,7 @@
 
 
 % Set size of columns
-\newcommand{\hmargin}{2cm} % 1.8cm or more is ideal
+\newcommand{\hmargin}{1.7cm} % 1.8cm or more is ideal
 \newcommand{\lcolsize}{.60\textwidth}
 \newcommand{\rcolsize}{.35\textwidth}
 
@@ -107,7 +107,7 @@
 }{%
 	\ignorespacesafterend%
 	\end{normalsize}%
-	\ifthenelse{\equal{\last}{true}}{}{\bigskip\bigskip}%
+	\ifthenelse{\equal{\last}{true}}{}{\medskip\bigskip}%
 }
 
 % Short-hand command for experience (without explanation)
@@ -165,8 +165,6 @@
 	}
 	\end{adjustbox}
 \end{minipage}
-
-%\bigskip
 
 \begin{minipage}[t][][t]{\lcolsize}
 	\input{exp}
