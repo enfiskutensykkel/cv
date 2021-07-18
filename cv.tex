@@ -1,6 +1,6 @@
 \documentclass[a4paper,10pt,notitlepage]{article}
-%\usepackage[a4paper,left=.4in,right=.4in,top=.3in,bottom=.3in]{geometry}
-\usepackage[cm,empty]{fullpage}
+\usepackage[a4paper,left=1.6cm,right=1.6cm,top=1.2cm,bottom=1.6cm]{geometry}
+%\usepackage[cm,empty]{fullpage}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[english]{babel}
@@ -54,7 +54,7 @@
 
 
 % Set size of columns
-\newcommand{\hmargin}{1.8cm} % 1.8cm is ideal
+\newcommand{\hmargin}{2cm} % 1.8cm or more is ideal
 \newcommand{\lcolsize}{.60\textwidth}
 \newcommand{\rcolsize}{.35\textwidth}
 
@@ -89,9 +89,10 @@
 			\hfill
 			{\ignorespaces {#3}} --- {\ignorespaces {#4}}
 		}
+		\smallskip
 		\parbox{\linewidth}{{\ignorespaces {#5}}}
 		\parbox{\linewidth}{{\ignorespaces {#6}}}
-	}\ifthenelse{\equal{#1}{}}{\bigskip}{}
+	}\ifthenelse{\equal{#1}{}}{\medskip\bigskip}{}
 }
 
 % Experience environment
@@ -106,13 +107,13 @@
 }{%
 	\ignorespacesafterend%
 	\end{normalsize}%
-	\ifthenelse{\equal{\last}{true}}{}{\smallskip\bigskip}%
+	\ifthenelse{\equal{\last}{true}}{}{\bigskip\bigskip}%
 }
 
 % Short-hand command for experience (without explanation)
 % Arguments: Company, position(s)
 \newcommand{\shortexperience}[3][]{%
-	{\ignorespaces #3}
+	\parbox{\linewidth}{\ignorespaces #3}
 	\parbox{\linewidth}{\noindent\ignorespaces {#2}}%
 	\ifthenelse{\equal{#1}{}}{\medskip\bigskip}{}%
 }
@@ -121,9 +122,9 @@
 % Publication
 % Arguments: DOI, Date, Venue, Authors, Title
 \newcommand{\publication}[6][]{%
-	\footnotesize{\noindent\ignorespaces{#5}}:
-	\small{\noindent\ignorespaces\textit{\href{https://doi.org/#2}{#6}}}.
-	\footnotesize{\noindent\ignorespaces{#4} (\noindent\ignorespaces{#3}).
+	\small{\noindent\ignorespaces{#5}}.
+	\small{\justifying\noindent\ignorespaces\textit{\href{https://doi.org/#2}{#6}}}.
+	\small{\noindent\ignorespaces{#4}. \noindent\ignorespaces{#3}.
 	DOI:~{\href{https://doi.org/#2}{#2}}}
 }
 
@@ -152,7 +153,7 @@
 	\fcolorbox{black}{infoboxcolor}{
 		%\centering
 		\begin{tabular*}{\linewidth}{r|l}
-			\large{\fixedphonesymbol{}} & 
+			\large{\mobilephonesymbol{}} & 
 			{\href{tel:+4740862630}{{+47}~{408}~{62}~{630}}}\\
 			\large{\emailsymbol{}} &
 			{\href{mailto:jonassm@ifi.uio.no}{{{jonassm}@ifi.uio.no}}} \\
@@ -169,9 +170,6 @@
 
 \begin{minipage}[t][][t]{\lcolsize}
 	\input{exp}
-	\bigskip
-	\smallskip
-	\input{pub}
 \end{minipage}%
 \hfill%
 \begin{minipage}[t][][t]{\rcolsize}
@@ -181,9 +179,10 @@
 	\input{part}
 	\bigskip
 	\input{skills}
-	\bigskip
-	\smallskip
-	\input{proj}
+\end{minipage}
+\vfill
+\begin{minipage}[b][][b]{\linewidth}
+	\input{pub}
 \end{minipage}
 
 \end{document}
