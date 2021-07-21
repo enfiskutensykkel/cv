@@ -1,3 +1,3 @@
 My résumé
 =========
-See [PDF](cv.pdf)
+See the [PDF](cv.pdf) ([download](https://github.com/enfiskutensykkel/cv/raw/master/cv.pdf)).
