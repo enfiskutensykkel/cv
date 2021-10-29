@@ -124,9 +124,9 @@
 % TODO: DeclareCommand and use key-value (type=xxx)
 \newcommand{\publication}[7][proceedings]{%
 	\small{\noindent\ignorespaces{#6}}.
-    \small{\justifying\noindent\ignorespaces{\textit{\href{https://doi.org/#2}{#7}}}}.
+    \small{\justifying\noindent\ignorespaces{``{\href{https://doi.org/#2}{#7}}''}}.
     %\small{In: \noindent\ignorespaces{\textit{\ifthenelse{\equal{#1}{proceedings}}{Proceedings of the}{}#4}}%
-    \small{\noindent\ignorespaces{#4}%
+    \small{In: \textit{\noindent\ignorespaces{#4}}%
     \ifthenelse{\equal{#5}{}}{}{\noindent\ignorespaces{%
         \ifthenelse{\equal{#1}{proceedings}}{ (\noindent\ignorespaces{#5})}{, \noindent\ignorespaces{#5}}
     }}. \noindent\ignorespaces{#3}.
