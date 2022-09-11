@@ -6,16 +6,15 @@
 Contributed to the SmartIO framework for high-performance, distributed I/O and resource sharing,
 in PCIe shared-memory clusters. 
 Gained experience with PCIe, non-transparent bridging, cluster interconnects, RDMA, distributed shared-memory
-architectures, NVMe, GPU programming, Nvidia GPUDirect, driver development and Linux kernel hacking.
-
+architectures, NVMe, GPU programming, driver development and Linux kernel hacking.
 \begin{contribs}
 	\item{Contributed to the design, implementation and evaluation of SmartIO.}
+	\item{Developed a storage framework based on SmartIO and GPUDirect, providing
+		zero-copy raw block access to NVMes from multiple GPUs in the cluster without involving CPU in the data path.}
 	\item{Created a distributed device driver for simultaneous sharing of a non-SR-IOV NVMe among multiple hosts in a cluster.}
 	\item{Implemented Linux KVM hypervisor support using VFIO mediated device drivers
 		for assigning remote physical devices to VMs (pass-through).}
-	\item{Developed a storage framework based on SmartIO and GPUDirect, providing
-		zero-copy raw block access to NVMes from multiple GPUs in the cluster without involving CPU in the data path.}
-	\item{Developed various DMA and RDMA cluster benchmarking tools.}
+	\item{Developed various shared-memory cluster benchmarking tools.}
 \end{contribs}
 \end{experience}
 
