@@ -4,7 +4,7 @@
     \position{Senior Software Engineer}{2018}{2019}
 }
 Working with Dolphin's PCIe-based shared-memory solutions. 
-Gained experience with PCIe non-transparent bridging, cluster interconnects, RDMA, distributed shared-memory
+Gained experience with C programming, PCIe non-transparent bridging, cluster interconnects, RDMA, distributed shared-memory
 architectures, NVMe, GPU programming, Linux driver development and Linux kernel hacking.
 \begin{contribs}
     \item{Contributed to the integration of the SmartIO framework from my PhD into Dolphin's standard product line.}
@@ -24,10 +24,10 @@ Worked on a research project in collaboration with Dolphin, with the goal of cre
     \item{Contributed significantly to the design and implementation of SmartIO.}
     %\item{Developed various benchmarking tools and conducted extensive evaluations to identify performance bottlenecks.}
 	%\item{Developed various shared-memory cluster benchmarking tools.}
-    \item{Evaluated SmartIO and identified performance bottlenecks, and implemented several optimizations that reduced the overall system performance overheads to near-zero (less than 100~nanoseconds).}
 	\item{Implemented Linux KVM hypervisor support for SmartIO using VFIO mediated device drivers
 		for assigning remote physical devices to VMs.}
-	\item{Developed a storage framework based on SmartIO using NVMe and GPUDirect, providing
+    \item{Identified performance bottlenecks and implemented several optimizations that reduced overheads for individual memory accesses to near-zero (\textless 50~nanoseconds), improving the overall system performance.}
+	\item{Developed a CUDA/C++ library based on SmartIO using NVMe and GPUDirect, providing
 		zero-copy data transfers and allowing GPUs to initiate reads and writes directly without involving CPUs.}
     \item{Published 5 academic papers based on SmartIO, including a publication in a flagship journal on distributed computer systems (ACM TOCS).}
 \end{contribs}
