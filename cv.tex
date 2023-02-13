@@ -94,7 +94,7 @@
 		\smallskip
 		\parbox{\linewidth}{{\ignorespaces {#5}}}
 		\parbox{\linewidth}{{\ignorespaces {#6}}}
-	}\ifthenelse{\equal{#1}{}}{\bigskip\bigskip}{}
+	}\ifthenelse{\equal{#1}{}}{\bigskip\medskip}{}
 }
 
 % Experience environment
@@ -182,14 +182,17 @@
 	\input{edu}
     \vfill
 	\bigskip
-	\bigskip
-    \medskip
+    \bigskip
+    \smallskip
 	\input{part}
     \vfill
 	\bigskip
     \bigskip
-    \medskip
-	%\input{skills}
+	\input{skills}
+    \vfill
+    \bigskip
+    \bigskip
+    \smallskip
     \input{pub}
 \end{minipage}
 %\vfill
