@@ -25,9 +25,10 @@
 	pdfsubject={CV for Jonas Markussen},
 	pdfkeywords={resumé, résumé, curriculum vitae, CV, experience, education, software, enfiskutensykkel,
 	engineer, developer, Linux, PCIe, GPU, NVMe, SSD, RDMA, networking, IP, TCP, TCP/IP, C, C++, Python},
-	pdfpagemode=UseOutlines,
-	breaklinks,
-	linktoc=all,
+	%pdfpagemode=UseOutlines,
+    pdfpagemode=UseThumbs,
+	breaklinks=true,
+	linktocpage=true,
 	colorlinks=true,
 	urlcolor=darkgray,
 	linkcolor=darkgray,
@@ -66,12 +67,13 @@
 		{\ignorespaces \textbf{#1}}
 		\hfill
 		{\ignorespaces {#2}} --- {\ignorespaces {#3}}
-	}\smallskip
+    }\smallskip%
 }
 
 
 % Contributions
 \newenvironment{contribs}{%
+    \smallskip%
 	\begin{normalsize}%
 		\begin{itemize}
 
@@ -107,7 +109,7 @@
 }{%
 	\ignorespacesafterend%
 	\end{normalsize}%
-	\ifthenelse{\equal{\last}{true}}{}{\bigskip\bigskip}%
+	\ifthenelse{\equal{\last}{true}}{}{\bigskip\medskip}%
 }
 
 % Short-hand command for experience (without explanation)
@@ -115,7 +117,7 @@
 \newcommand{\shortexperience}[3][]{%
 	\parbox{\linewidth}{\ignorespaces #3}
 	\parbox{\linewidth}{\noindent\ignorespaces {#2}}%
-	\ifthenelse{\equal{#1}{}}{\medskip\bigskip}{}%
+	\ifthenelse{\equal{#1}{}}{\bigskip\medskip}{}%
 }
 
 
@@ -129,8 +131,9 @@
     \small{\textit{\noindent\ignorespaces{#4}}%
     \noindent\ignorespaces{\ifthenelse{\equal{#5}{}}{}{%
         \ifthenelse{\equal{#1}{proceedings}}{ (\noindent\ignorespaces{#5})}{, \noindent\ignorespaces{#5}}%
-    }.} \noindent\ignorespaces{#3}.
+    }.}\ifthenelse{\equal{#3}{}}{}{ \noindent\ignorespaces{#3}.}%
 	DOI:~{\href{https://doi.org/#2}{#2}}}
+    \medskip
 }
 
 
@@ -180,14 +183,18 @@
     \vfill
 	\bigskip
 	\bigskip
+    \medskip
 	\input{part}
+    \vfill
 	\bigskip
     \bigskip
-	\input{skills}
+    \medskip
+	%\input{skills}
+    \input{pub}
 \end{minipage}
-\vfill
-\begin{minipage}[b][][b]{\linewidth}
-	\input{pub}
-\end{minipage}
+%\vfill
+%\begin{minipage}[b][][b]{\linewidth}
+%	\input{pub}
+%\end{minipage}
 
 \end{document}

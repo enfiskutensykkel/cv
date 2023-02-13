@@ -1,30 +1,46 @@
-\section{Software Engineering Experience}
+\section{Experience}
 \begin{experience}{Dolphin Interconnect Solutions}{
 	\position{Software Architect}{2019}{\phantom{0000}}
-    \position{Senior Software Engineer (R\&D)}{2018}{2019}
+    \position{Senior Software Engineer}{2018}{2019}
 }
-Contributed to the SmartIO solution for efficient resource sharing and high-performance, distributed I/O 
-in PCIe shared-memory clusters. 
-Gained experience with PCIe, non-transparent bridging, cluster interconnects, RDMA, distributed shared-memory
-architectures, NVMe, GPU programming, driver development and Linux kernel hacking.
+Working with Dolphin's PCIe-based shared-memory solutions. 
+Gained experience with PCIe non-transparent bridging, cluster interconnects, RDMA, distributed shared-memory
+architectures, NVMe, GPU programming, Linux driver development and Linux kernel hacking.
 \begin{contribs}
-	\item{Contributed to the design, implementation and evaluation of SmartIO.}
-	\item{Developed a storage framework based on SmartIO and GPUDirect, providing
-		zero-copy raw block access to NVMes from multiple GPUs in the cluster without involving CPU in the data path.}
-	\item{Created a distributed device driver for simultaneous sharing of a non-SR-IOV NVMe among multiple hosts in a cluster.}
-	\item{Implemented Linux KVM hypervisor support using VFIO mediated device drivers
-		for assigning remote physical devices to VMs (pass-through).}
-	\item{Developed various shared-memory cluster benchmarking tools.}
+    \item{Contributed to the integration of the SmartIO framework from my PhD into Dolphin's standard product line.}
+    %\item{Contributed to the integration of the SmartIO framework for efficient resource sharing and high-performance, distributed I/O in cluster networks from my PhD into Dolphin's standard product suite.}
+	\item{Created a distributed block device driver for simultaneous sharing of a non-SR-IOV NVMe among multiple hosts in a cluster.}
+\end{contribs}
+\end{experience}
+
+
+\begin{experience}{Simula Research Laboratory}{
+        \position{External PhD Student}{2018}{2022}
+        \position{PhD Student}{2015}{2018}
+}
+Was a full-time PhD student until my scholarship ran out, and then completed my PhD on my own time.
+Worked on a research project in collaboration with Dolphin, with the goal of creating a framework called SmartIO for efficiently sharing I/O resources in a PCIe shared memory cluster.%
+\begin{contribs}
+    \item{Contributed significantly to the design and implementation of SmartIO.}
+    %\item{Developed various benchmarking tools and conducted extensive evaluations to identify performance bottlenecks.}
+	%\item{Developed various shared-memory cluster benchmarking tools.}
+    \item{Evaluated SmartIO and identified performance bottlenecks, and implemented several optimizations that reduced the overall system performance overheads to near-zero (less than 100~nanoseconds).}
+	\item{Implemented Linux KVM hypervisor support for SmartIO using VFIO mediated device drivers
+		for assigning remote physical devices to VMs.}
+	\item{Developed a storage framework based on SmartIO using NVMe and GPUDirect, providing
+		zero-copy data transfers and allowing GPUs to initiate reads and writes directly without involving CPUs.}
+    \item{Published 5 academic papers based on SmartIO, including a publication in a flagship journal on distributed computer systems (ACM TOCS).}
 \end{contribs}
 \end{experience}
 
 \begin{experience}{Bridgetech}{
-		\position{Software Developer}{2014}{2015}
+        \position{Software Developer}{2014}{2015}
 }
-Worked with online analysis of digital video over network.
-Got experience with video encoding, PIM-SM multicasting, MPEG 
-streams, working with C++ in an embedded environment, and
-real-time network traffic analysis.
+Worked with real-time analysis of digital video over network.
+Got experience with working with C++ in an embedded environment, network traffic analysis, video encoding, MPEG streams, and PIM-SM multicasting.
+%    video encoding, PIM-SM multicasting, MPEG 
+%streams, working with C++ in an embedded environment, and
+%real-time network traffic analysis.
 
 \begin{contribs}
 	\item{Contributed to an MPEG transport stream parser for the VB288 content extractor using libpcap for live capturing
@@ -36,14 +52,15 @@ real-time network traffic analysis.
 \end{experience}
 
 \begin{experience}[last]{Fotoware}{
-	\position{Software Development Engineer (Web Back-end)}{2013}{2014}
-	%\position{Front-End Developer}{2011}{2013}
+        \position{Software Development Engineer}{2013}{2014}
+        %\position{Front-end Web Developer (Part-time)}{2011}{2013}
 }
-Worked mainly with FotoWeb, a web-based image and video
+Worked as a back-end web developer on Fotoweb, an web-based image and video
 archiving system with full-text metadata search and workflows based on
 metadata tags. %
 Designed REST services from the ground up, and worked with C++ (FastCGI) and Python (Flask). %
-Also gained some experience with MongoDB and front-end technologies (JavaScript, HTML/CSS, jQuery).
+%Also gained some experience with MongoDB and front-end JavaScript technologies (jQuery). %
+%Also gained some experience with MongoDB and front-end technologies (JavaScript, HTML/CSS, jQuery).
 %Gained experience working with Apache2, MongoDB, web
 %caches, designing REST services from the ground up, and creating HTTP endpoints with C++ (FastCGI)
 %and Python (Flask).
