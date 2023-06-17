@@ -1,6 +1,7 @@
 \documentclass[a4paper,10pt,notitlepage]{article}
 \usepackage[a4paper,left=1.6cm,right=1.6cm,top=.8cm,bottom=1.6cm]{geometry}
 %\usepackage[cm,empty]{fullpage}
+\usepackage{fontawesome5}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[english]{babel}
@@ -11,11 +12,14 @@
 \usepackage{enumitem}
 \usepackage{pdfsync}
 \usepackage[scaled=.94]{helvet}
-\usepackage{xcolor}
 \usepackage{ragged2e}
 \usepackage{ifthen}
+\usepackage{xcolor}
+
+% Make text dark gray instead of black
 \AtBeginDocument{\color{darkgray}}
 
+% Background color for contact information box
 \definecolor{infoboxcolor}{gray}{.97}
 
 \usepackage[]{hyperref}
@@ -24,25 +28,23 @@
 	pdfauthor={Jonas Markussen},
 	pdfsubject={CV for Jonas Markussen},
 	pdfkeywords={resumé, résumé, curriculum vitae, CV, experience, education, software, enfiskutensykkel,
-	engineer, developer, Linux, PCIe, GPU, NVMe, SSD, RDMA, networking, IP, TCP, TCP/IP, C, C++, Python},
+	engineer, developer, Linux, NTB, PCIe, GPU, NVMe, SSD, RDMA, networking, IP, TCP, TCP/IP, C, C++, Python},
 	%pdfpagemode=UseOutlines,
     pdfpagemode=UseThumbs,
 	breaklinks=true,
-	linktocpage=true,
+	%linktocpage=true,
 	colorlinks=true,
 	urlcolor=darkgray,
 	linkcolor=darkgray,
 	citecolor=darkgray
 }
 
-\input{icons}
-
 % Set spacing and stuff
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{2em}
 \linespread{1.1}
 \renewcommand{\baselinestretch}{.82}
-\setlist[itemize]{leftmargin=*,rightmargin=0pt,itemsep=2pt,topsep=2pt}
+\setlist[itemize]{leftmargin=*,rightmargin=0pt,itemsep=2pt,topsep=1em}
 
 
 % Override fonts
@@ -55,10 +57,28 @@
 
 
 % Set size of columns
-\newcommand{\hmargin}{1.7cm} % 1.8cm or more is ideal
-\newcommand{\lcolsize}{.60\textwidth}
-\newcommand{\rcolsize}{.35\textwidth}
+\newcommand{\hmargin}{1.8cm} % 1.8cm or more is ideal
+\newcommand{\lcolwidth}{.60\textwidth}
+\newcommand{\rcolwidth}{.35\textwidth}
+\newcommand{\lcolheight}{.9\textheight}
+\newcommand{\rcolheight}{.9\textheight}
 
+
+% Education
+% Arguments: Degree, from, to, institution, additional explanation
+\newcommand{\education}[6][]{%
+	\parbox[t]{\linewidth}{%
+        %\parbox[t]{1.5em}{\small{\faGraduationCap}}%
+		\parbox{\linewidth}{%
+            {\ignorespaces \textbf{#2}}
+			\hfill
+			{\ignorespaces {#3}} --- {\ignorespaces {#4}}
+		}
+		\smallskip
+		\parbox{\linewidth}{{\ignorespaces {#5}}}
+		\parbox{\linewidth}{{\ignorespaces {#6}}}
+	}\ifthenelse{\equal{#1}{}}{\bigskip\medskip}{}
+}
 
 % Position
 % Arguments: Title, from, to
@@ -70,134 +90,104 @@
     }\smallskip%
 }
 
-
-% Contributions
-\newenvironment{contribs}{%
-    \smallskip%
-	\begin{normalsize}%
-		\begin{itemize}
-
-}{%
-		\end{itemize}%
-	\end{normalsize}
-}
-
-% Education
-% Arguments: Degree, from, to, institution, additional explanation
-\newcommand{\education}[6][]{%
-	\parbox[t][][t]{\linewidth}{%
-		\parbox{\linewidth}{%
-			{\ignorespaces \textbf{#2}}
-			\hfill
-			{\ignorespaces {#3}} --- {\ignorespaces {#4}}
-		}
-		\smallskip
-		\parbox{\linewidth}{{\ignorespaces {#5}}}
-		\parbox{\linewidth}{{\ignorespaces {#6}}}
-	}\ifthenelse{\equal{#1}{}}{\bigskip\medskip}{}
-}
-
 % Experience environment
 % Arguments: Company, position(s)
 \newenvironment{experience}[3][]{%
 	\ifthenelse{\equal{#1}{}}{\def\last{false}}{\def\last{true}}
-	{\ignorespaces #3}
-	\parbox{\linewidth}{\noindent\ignorespaces {#2}}%
-	\\[1em]
-	\begin{normalsize}%
-	\ignorespaces%
+    \begin{minipage}{\linewidth}{\noindent\ignorespaces #3}\end{minipage}
+	\parbox{\linewidth}{\noindent\ignorespaces {#2}}
+    \begin{itemize}
+	\ignorespaces
 }{%
-	\ignorespacesafterend%
-	\end{normalsize}%
-	\ifthenelse{\equal{\last}{true}}{}{\bigskip\medskip}%
+	\ignorespacesafterend
+    \end{itemize}
+	\ifthenelse{\equal{\last}{true}}{}{\bigskip\bigskip\smallskip}%
 }
+
 
 % Short-hand command for experience (without explanation)
 % Arguments: Company, position(s)
 \newcommand{\shortexperience}[3][]{%
 	\parbox{\linewidth}{\ignorespaces #3}
 	\parbox{\linewidth}{\noindent\ignorespaces {#2}}%
-	\ifthenelse{\equal{#1}{}}{\bigskip\medskip}{}%
+	\ifthenelse{\equal{#1}{}}{\bigskip\bigskip\smallskip}{}%
 }
-
 
 % Publication
 % Arguments: DOI, Date, Venue, Volume/Issue, Authors, Title
 % TODO: DeclareCommand and use key-value (type=xxx)
 \newcommand{\publication}[7][proceedings]{%
-	\small{\noindent\ignorespaces{#6}}.
-    \small{\justifying\noindent\ignorespaces{``{\href{https://doi.org/#2}{#7}}''}}.
-    %\small{In: \noindent\ignorespaces{\textit{\ifthenelse{\equal{#1}{proceedings}}{Proceedings of the}{}#4}}%
-    \small{\textit{\noindent\ignorespaces{#4}}%
-    \noindent\ignorespaces{\ifthenelse{\equal{#5}{}}{}{%
-        \ifthenelse{\equal{#1}{proceedings}}{ (\noindent\ignorespaces{#5})}{, \noindent\ignorespaces{#5}}%
-    }.}\ifthenelse{\equal{#3}{}}{}{ \noindent\ignorespaces{#3}.}%
-	DOI:~{\href{https://doi.org/#2}{#2}}}
+    \def\symw{1em}
+    %\parbox[m]{\symw}{\faBook}%
+    \parbox[m]{\symw}{\labelitemi}%
+    \href{https://doi.org/#2}{%
+        \parbox[t]{\linewidth-\symw}{%
+            \noindent\ignorespaces{#6}.
+            {\justifying\noindent\ignorespaces{``{#7}}''}.
+            \textit{\noindent\ignorespaces{#4}}%
+            \noindent\ignorespaces{\ifthenelse{\equal{#5}{}}{}{%
+                \ifthenelse{\equal{#1}{proceedings}}{ (\noindent\ignorespaces{#5})}{, \noindent\ignorespaces{#5}}%
+            }.}\ifthenelse{\equal{#3}{}}{}{ \noindent\ignorespaces{#3}.}
+            DOI:~{#2}%\href{https://doi.org/#2}{#2}}
+        }%
+    }
     \medskip
 }
 
 
 % Generic entry (skills, projects, etc)
 % Arguments: title, description
-\newcommand{\entry}[3][]{%
-	\parbox{\linewidth}{%
-	\begin{small}\justifying%
-	\textbf{\noindent\ignorespaces{#2}} -- {\noindent\ignorespaces#3}%
-	\end{small}%
-	}\ifthenelse{\equal{#1}{}}{\bigskip}{}%
+\newcommand{\entry}[4][]{%
+    \parbox[t]{\linewidth}{%
+        \ifthenelse{\equal{#2}{}}{\def\symw{0em}}{\def\symw{1.5em}}
+        \ifthenelse{\equal{#2}{}}{}{\parbox[t]{\symw}{\small{#2}}}%
+        \parbox[t]{\linewidth-\symw}{\textbf{\noindent\ignorespaces{#3}}}
+        \smallskip
+        \parbox{\linewidth}{%
+            \noindent\ignorespaces
+            \justifying{#4}
+        }
+	}\ifthenelse{\equal{#1}{}}{\bigskip\medskip}{}%
 }
 
 
 
 \begin{document}
 \pagestyle{empty}
-\begin{minipage}[t][\hmargin][c]{\lcolsize}
+\begin{minipage}[t][\hmargin][c]{\lcolwidth}
 	{\huge\textbf{Jonas Markussen}}\\[1.1em]
-    {\Large{Systems Software Engineer}}
+    {\Large{R\&D Systems Software Engineer}}
 \end{minipage}%
 \hfill%
-\protect\begin{minipage}[t][\hmargin][c]{\rcolsize}
+\protect\begin{minipage}[t][\hmargin][c]{\rcolwidth}
 	\begin{adjustbox}{max width=\textwidth}
 	\fcolorbox{black}{infoboxcolor}{
-		%\centering
-		\begin{tabular*}{\linewidth}{r|l}
-			\large{\mobilephonesymbol{}} & 
+		\begin{tabular*}{\linewidth}{c|l}
+            \large{\faPhone*} & 
 			{\href{tel:+4740862630}{{+47}~{408}~{62}~{630}}}\\
-			\large{\emailsymbol{}} &
-			{\href{mailto:jonassm@ifi.uio.no}{{{jonassm}@ifi.uio.no}}} \\
-			\large{\linkedinsymbol{}} &
+            \large{\faEnvelope[regular]} &
+			{\href{mailto:enfiskutensykkel@gmail.com}{{{enfiskutensykkel}@gmail.com}}} \\
+			\large{\faLinkedin} &
 			{\href{https://www.linkedin.com/in/jonasmarkussen}{{jonasmarkussen}}} \\
-			\large{\githubsymbol{}} &
+			\large{\faGithub} &
 			{\href{https://github.com/enfiskutensykkel}{{enfiskutensykkel}}} \\
+            \large{\faOrcid} &
+            {\href{https://orcid.org/0000-0003-3166-2480}{0000-0003-3166-2480}} \\
 		\end{tabular*}
 	}
 	\end{adjustbox}
 \end{minipage}
 
-\begin{minipage}[t][][t]{\lcolsize}
+\begin{minipage}[t][\lcolheight][t]{\lcolwidth}
 	\input{exp}
 \end{minipage}%
 \hfill%
-\begin{minipage}[t][][t]{\rcolsize}
+\begin{minipage}[t][\rcolheight][t]{\rcolwidth}
 	\input{edu}
     \vfill
-	\bigskip
-    \bigskip
-    \smallskip
-	\input{part}
-    \vfill
-	\bigskip
-    \bigskip
 	\input{skills}
     \vfill
-    \bigskip
-    \bigskip
-    \smallskip
     \input{pub}
 \end{minipage}
-%\vfill
-%\begin{minipage}[b][][b]{\linewidth}
-%	\input{pub}
-%\end{minipage}
 
 \end{document}

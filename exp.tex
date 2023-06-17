@@ -1,86 +1,36 @@
-\section{Experience}
+\section[Experience]{\faBriefcase~~Experience}
 \begin{experience}{Dolphin Interconnect Solutions}{
-	\position{Software Architect}{2019}{\phantom{0000}}
+    %\position{Head of R\&D}{2023}{\phantom{0000}}
+    \position{Software Architect}{2019}{2023}
     \position{Senior Software Engineer}{2018}{2019}
 }
-Working with Dolphin's PCIe-based shared-memory solutions. 
-Gained experience with C programming, PCIe non-transparent bridging, cluster interconnects, RDMA, distributed shared-memory
-architectures, NVMe, GPU programming, Linux driver development and Linux kernel hacking.
-\begin{contribs}
-    \item{Contributed to the integration of the SmartIO framework from my PhD into Dolphin's standard product line.}
-    %\item{Contributed to the integration of the SmartIO framework for efficient resource sharing and high-performance, distributed I/O in cluster networks from my PhD into Dolphin's standard product suite.}
-	\item{Created a distributed block device driver for simultaneous sharing of a non-SR-IOV NVMe among multiple hosts in a cluster.}
-\end{contribs}
+    %\item{Leading a newly established R\&D team and continuing SmartIO development and research, as well as looking into next generation PCIe and CXL.}
+    \item{Turned the SmartIO framework implementation from my PhD into standard Dolphin product.}
+    \item{Implemented an NVMe device driver and block device interface for Linux that makes it possible for multiple hosts in a PCIe shared-memory cluster to share and simultaneously access NVMe devices without requiring virtualization.}
 \end{experience}
-
 
 \begin{experience}{Simula Research Laboratory}{
-        \position{External PhD Student}{2018}{2022}
-        \position{PhD Student}{2015}{2018}
+    \position{External PhD Student}{2018}{2022}
+    \position{PhD Student}{2015}{2018}
 }
-Was a full-time PhD student until my scholarship ran out, and then completed my PhD on my own time.
-Worked on a research project in collaboration with Dolphin, with the goal of creating a framework called SmartIO for efficiently sharing I/O resources in a PCIe shared memory cluster.%
-\begin{contribs}
-    \item{Contributed significantly to the design and implementation of SmartIO.}
-    %\item{Developed various benchmarking tools and conducted extensive evaluations to identify performance bottlenecks.}
-	%\item{Developed various shared-memory cluster benchmarking tools.}
-	\item{Implemented Linux KVM hypervisor support for SmartIO using VFIO mediated device drivers
-		for assigning remote physical devices to VMs.}
-    \item{Identified performance bottlenecks and implemented several optimizations that reduced overheads for individual memory accesses to near-zero (\textless 50~nanoseconds), improving the overall system performance.}
-	\item{Developed a CUDA/C++ library based on SmartIO using NVMe and GPUDirect, providing
-		zero-copy data transfers and allowing GPUs to initiate reads and writes directly without involving CPUs.}
-    \item{Published 5 academic papers based my SmartIO work, including one in a flagship journal on distributed computer systems (ACM TOCS).}
-\end{contribs}
+    \item{Designed, implemented, and evaluated the SmartIO framework for distributed I/O and allowing hosts to sharing PCIe devices and disaggregate memory resources in Dolphin PCIe shared-memory clusters.}
+    \item{Implemented Linux KVM hypervisor support for SmartIO using VFIO mediated device drivers, allowing remote physical devices to be assigned to VMs on different hosts in the cluster.}
+    \item{Developed multiple shared-memory and RDMA-based benchmarking tools and conducted extensive evaluations to identify performance bottlenecks in Dolphin's PCIe cluster solutions, and implemented several optimizations for SmartIO that reduced latency overhead for remote memory access to near-zero (\textless 50~nanoseconds).}
+    \item{Developed a CUDA/C++ library using GPUDirect and SmartIO for allowing GPUs to initiate reading and writing from NVMes directly without involving CPUs, and transferring data directly from storage into GPU memory (zero-copy).}
+    \item{Published 5 academic papers based on my SmartIO work, including a paper in ACM Transactions on Computer Systems, a flagship journal on distributed computer systems.}
 \end{experience}
 
-\begin{experience}{Bridgetech}{
-        \position{Software Developer}{2014}{2015}
-}
-Worked with real-time analysis of digital video over network.
-Got experience with working with C++ in an embedded environment, network traffic analysis, video encoding, MPEG streams, and PIM-SM multicasting.
-%    video encoding, PIM-SM multicasting, MPEG 
-%streams, working with C++ in an embedded environment, and
-%real-time network traffic analysis.
-
-\begin{contribs}
-	\item{Contributed to an MPEG transport stream parser for the VB288 content extractor using libpcap for live capturing
-		IPTV (MPEG-DASH).}
-	\item{Implemented a parser for MPEG-2 and MPEG-4/AVC video streams in order to extract and
-		validate CEA608/708 closed captioning data and provide real-time event
-		notifications.}
-\end{contribs}
+\begin{experience}{Bridgetech}{\position{Software Developer}{2014}{2015}}
+    \item{Contributed to an MPEG transport stream parser using libpcap for live capturing IPTV/MPEG-DASH traffic.}
+    \item{Implemented a parser for MPEG-2 and MPEG-4/AVC video streams in order to extract and validate closed captioning data and provide real-time event notifications in case of missing or corrupted data.}
 \end{experience}
 
-\begin{experience}[last]{Fotoware}{
-        \position{Software Development Engineer}{2013}{2014}
-        %\position{Front-end Web Developer (Part-time)}{2011}{2013}
+\shortexperience{Fotoware}{
+    \position{Software Development Engineer (web back-end)}{2013}{2014}
+    \position{Front-end Web Developer}{2011}{2013}
 }
-Worked as a back-end web developer on Fotoweb, an web-based image and video
-archiving system with full-text metadata search and workflows based on
-metadata tags. %
-Designed REST services from the ground up, and worked with MongoDB, C++ (FastCGI) and Python (Flask). %
-%Also gained some experience with MongoDB and front-end JavaScript technologies (jQuery). %
-%Also gained some experience with MongoDB and front-end technologies (JavaScript, HTML/CSS, jQuery).
-%Gained experience working with Apache2, MongoDB, web
-%caches, designing REST services from the ground up, and creating HTTP endpoints with C++ (FastCGI)
-%and Python (Flask).
 
-\begin{contribs}
-	\item{Implemented a hierarchical metadata taxonomy tree that
-		supported CRUD operations and assignment to assets of tens of thousands of metadata tags within
-		milliseconds.}
-	\item{Created a configurable workflow engine allowing users to
-		create custom pipelines and workloads for processing assets based on
-		metadata tags.}
-	\item{Made a background job scheduler with support for
-		webhooks and asynchronous message-passing as well as
-		bulk file operations.}
-	\item{Implemented both back-end and front-end for exporting
-		assets to an external CMS and an access 
-		management UI for these exports.}
-	%\item{Contributed to migrating the existing code base from IIS to Apache.}
-\end{contribs}
-\end{experience}
+\shortexperience[last]{Redimi}{\position{Java Programmer (part-time)}{2010}{2011}}
 
-%\shortexperience[last]{Redimi}{\position{Java Programmer}{2010}{2011}}
+%\shortexperience[last]{University of Oslo}{\position{Teaching Assistant}{2009}{2011}}
 
