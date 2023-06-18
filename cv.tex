@@ -16,6 +16,7 @@
 \usepackage{ifthen}
 \usepackage{xcolor}
 
+
 % Make text dark gray instead of black
 \AtBeginDocument{\color{darkgray}}
 
@@ -57,11 +58,11 @@
 
 
 % Set size of columns
-\newcommand{\hmargin}{1.8cm} % 1.8cm or more is ideal
+\newcommand{\hmargin}{2.4cm} % 1.8cm or more is ideal
 \newcommand{\lcolwidth}{.60\textwidth}
 \newcommand{\rcolwidth}{.35\textwidth}
-\newcommand{\lcolheight}{.9\textheight}
-\newcommand{\rcolheight}{.9\textheight}
+\newcommand{\lcolheight}{.87\textheight}
+\newcommand{\rcolheight}{.87\textheight}
 
 
 % Education
@@ -101,7 +102,7 @@
 }{%
 	\ignorespacesafterend
     \end{itemize}
-	\ifthenelse{\equal{\last}{true}}{}{\bigskip\bigskip\smallskip}%
+	\ifthenelse{\equal{\last}{true}}{}{\bigskip\bigskip}%
 }
 
 
@@ -110,7 +111,7 @@
 \newcommand{\shortexperience}[3][]{%
 	\parbox{\linewidth}{\ignorespaces #3}
 	\parbox{\linewidth}{\noindent\ignorespaces {#2}}%
-	\ifthenelse{\equal{#1}{}}{\bigskip\bigskip\smallskip}{}%
+	\ifthenelse{\equal{#1}{}}{\bigskip\bigskip}{}%
 }
 
 % Publication
