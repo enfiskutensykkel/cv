@@ -45,7 +45,7 @@
 \setlength{\parskip}{2em}
 \linespread{1.1}
 \renewcommand{\baselinestretch}{.82}
-\setlist[itemize]{leftmargin=*,rightmargin=0pt,itemsep=2pt,topsep=1em}
+\setlist[itemize]{leftmargin=*,rightmargin=0pt,itemsep=2pt,topsep=2pt}
 
 
 % Override fonts
@@ -96,13 +96,14 @@
 \newenvironment{experience}[3][]{%
 	\ifthenelse{\equal{#1}{}}{\def\last{false}}{\def\last{true}}
     \begin{minipage}{\linewidth}{\noindent\ignorespaces #3}\end{minipage}
+    \medskip
 	\parbox{\linewidth}{\noindent\ignorespaces {#2}}
     \begin{itemize}
 	\ignorespaces
 }{%
 	\ignorespacesafterend
     \end{itemize}
-	\ifthenelse{\equal{\last}{true}}{}{\bigskip\bigskip}%
+	\ifthenelse{\equal{\last}{true}}{}{\bigskip\bigskip\smallskip}%
 }
 
 
@@ -111,7 +112,7 @@
 \newcommand{\shortexperience}[3][]{%
 	\parbox{\linewidth}{\ignorespaces #3}
 	\parbox{\linewidth}{\noindent\ignorespaces {#2}}%
-	\ifthenelse{\equal{#1}{}}{\bigskip\bigskip}{}%
+	\ifthenelse{\equal{#1}{}}{\bigskip\bigskip\smallskip}{}%
 }
 
 % Publication
@@ -136,8 +137,8 @@
 }
 
 
-% Generic entry (skills, projects, etc)
-% Arguments: title, description
+% Generic entry without a time period (skills, projects, etc)
+% Arguments: icon, title, description
 \newcommand{\entry}[4][]{%
     \parbox[t]{\linewidth}{%
         \ifthenelse{\equal{#2}{}}{\def\symw{0em}}{\def\symw{1.5em}}
@@ -156,7 +157,7 @@
 \begin{document}
 \pagestyle{empty}
 \begin{minipage}[t][\hmargin][c]{\lcolwidth}
-	{\huge\textbf{Jonas Markussen}}\\[1.1em]
+    {\Huge\textbf{Jonas Markussen}}\\[1.1em] % huge (with lower case h) works best if the personal info box would be smaller
     {\Large{R\&D Systems Software Engineer}}
 \end{minipage}%
 \hfill%

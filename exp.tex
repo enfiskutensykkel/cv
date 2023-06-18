@@ -5,8 +5,10 @@
     \position{Senior Software Engineer}{2018}{2019}
 }
     %\item{Leading a newly established R\&D team, continuing research and development of SmartIO as well as looking into next gen. PCIe and CXL.}
-    \item{Responsible for turning the SmartIO framework implementation from my PhD into a standard Dolphin product.}
     \item{Implemented an NVMe device driver and block device interface on top of SmartIO, allowing multiple hosts in a PCIe cluster to share and simultaneously access NVMe devices without requiring virtualization.}
+    \item{Responsible for turning the SmartIO framework implementation from my PhD into a standard Dolphin product.}
+    \item{Developed multiple shared-memory and RDMA-based benchmarking tools in order to measure the performance of data transfers.}
+    \item{Contributed to two research papers on offloading a DPDK network card driver onto an FPGA and on a GPU respectively.}
 \end{experience}
 
 \begin{experience}{Simula Research Laboratory}{
@@ -14,17 +16,16 @@
     \position{PhD Student}{2015}{2018}
 }
     \item{Was a full-time PhD student until my scholarship ran out, and then completed the PhD on my own time while I worked for Dolphin.}
-    \item{Designed, implemented, and evaluated the SmartIO framework for high-performance, distributed I/O by allowing hosts in a Dolphin PCIe shared-memory cluster to share PCIe devices among themselves and disaggregate memory resources.}
-    \item{Implemented Linux KVM hypervisor support for SmartIO using VFIO mediated device drivers, allowing remote physical devices to be assigned to VMs on different hosts in the cluster.}
-    \item{Developed multiple shared-memory and RDMA-based benchmarking tools in order to measure the performance of data transfers.}
-    \item{Identified performance bottlenecks in SmartIO through extensive experimentation, and implemented several optimizations that reduced the latency overhead of remote memory access to near-zero (\textless 50~ns).}
-    \item{Developed a CUDA/C++ library using GPUDirect and SmartIO that enable  GPUs to initiate reading and writing from NVMes directly, moving data from storage into GPU memory directly (zero-copy data transfer) without involving the CPU.}
-    \item{Published 5 academic papers based on my SmartIO work, including a paper in a flagship journal on distributed computer systems.}
+    \item{Designed, implemented, and evaluated the SmartIO framework for high-performance, distributed I/O by making it possible for  host~machines in a Dolphin PCIe shared-memory cluster to disaggregate and share their internal I/O resources (PCIe devices and memory resources).}
+    \item{Extended SmartIO with Linux KVM hypervisor support using VFIO mediated device drivers, allowing physical devices to be assigned to VMs running on remote hosts in the cluster.}
+    \item{Developed a CUDA/C++ library for SmartIO with GPUDirect support, and, as proof of concept, implemented a userspace NVMe driver that enable GPUs to initiate reading and writing from storage independently of CPUs (driver running on GPU itself), and moving data from remote NVMe devices anywhere in the cluster directly into GPU memory.}
+    %\item{Identified performance bottlenecks in SmartIO through extensive experimentation, and implemented several optimizations that reduced the latency overhead of remote memory access to near-zero (\textless 50~ns).}
+    \item{Published 5 academic papers about SmartIO, including a paper in ACM TOCS, a flagship journal on distributed computer systems.}
 \end{experience}
 
 \begin{experience}{Bridgetech}{\position{Software Developer}{2014}{2015}}
-    \item{Contributed to an MPEG transport stream parser using libpcap for live capturing IPTV/MPEG-DASH traffic.}
-    \item{Implemented a parser for MPEG-2 and MPEG-4/AVC video streams in order to extract and validate closed captioning data and provide real-time event notifications in case of missing or corrupted data.}
+    \item{Contributed to a project using libpcap for live capturing IPTV traffic over RTP or MPEG-DASH and parsing out MPEG transport streams.}
+    \item{Implemented a parser for MPEG video streams in order to extract and validate closed captioning data and provide real-time event notifications in case of missing or corrupted data.}
 \end{experience}
 
 \shortexperience{Fotoware}{
@@ -34,5 +35,5 @@
 
 \shortexperience{Redimi}{\position{Java Programmer (part-time)}{2010}{2011}}
 
-%\shortexperience[last]{University of Oslo}{\position{Teaching Assistant}{2009}{2011}}
+\shortexperience[last]{University of Oslo}{\position{Teaching Assistant}{2009}{2011}}
 
