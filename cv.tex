@@ -16,6 +16,7 @@
 \usepackage{ifthen}
 \usepackage{xcolor}
 
+%\usepackage{showframe}
 
 % Make text dark gray instead of black
 \AtBeginDocument{\color{darkgray}}
@@ -25,7 +26,7 @@
 
 \usepackage[]{hyperref}
 \hypersetup{
-	pdftitle={Jonas Markussen},
+    pdftitle={Jonas Markussen},
 	pdfauthor={Jonas Markussen},
 	pdfsubject={CV for Jonas Markussen},
 	pdfkeywords={resumé, résumé, curriculum vitae, CV, experience, education, software, enfiskutensykkel,
@@ -64,6 +65,9 @@
 \newcommand{\rcolwidth}{.35\textwidth}
 
 
+% TODO: remove ifthenelse and figure out how to use \unskip or \vspace-\lastskip instead
+
+
 % Education
 % Arguments: Degree, from, to, institution, additional explanation
 \newcommand{\education}[6][]{%
@@ -81,7 +85,7 @@
 }
 
 % Position
-% Arguments: Title, from, to
+% Arguments: Job title, from, to
 \newcommand{\position}[3]{%
 	\parbox{\textwidth}{%
 		{\ignorespaces \textbf{#1}}
@@ -104,7 +108,6 @@
     \end{itemize}
 	\ifthenelse{\equal{\last}{true}}{}{\bigskip\bigskip\smallskip}%
 }
-
 
 % Short-hand command for experience (without explanation)
 % Arguments: Company, position(s)
@@ -135,7 +138,6 @@
     \medskip
 }
 
-
 % Generic entry without a time period (skills, projects, etc)
 % Arguments: icon, title, description
 \newcommand{\entry}[4][]{%
@@ -155,19 +157,21 @@
 
 \begin{document}
 \pagestyle{empty}
-\begin{minipage}[t][\titleheight][c]{\lcolwidth}
-    {\huge\textbf{Jonas Markussen}}\\[1.1em] % huge (with lowercase h) works best if the personal info box would be smaller
+\addcontentsline{toc}{title}{Jonas Markussen}%
+\begin{minipage}[m][\titleheight][c]{\lcolwidth}
+    {\Huge\textbf{Jonas Markussen}}\\[1.1em] % huge (with lowercase h) works best if the personal info box would be smaller
     {\Large{Researcher and Systems Software Engineer}} % Large (uppercase L, lowercase arge) is also better when the box is smaller
 \end{minipage}%
 \hfill%
-\protect\begin{minipage}[t][\titleheight][c]{\rcolwidth}
+\protect\begin{minipage}[m][\titleheight][c]{\rcolwidth}
+    \addcontentsline{toc}{section}{Personal Information}%
 	\begin{adjustbox}{max width=\textwidth}
 	\fcolorbox{black}{infoboxcolor}{
 		\begin{tabular*}{\linewidth}{c|l}
             \large{\faPhone*} & 
 			{\href{tel:+4740862630}{{+47}~{408}~{62}~{630}}}\\
             \large{\faEnvelope[regular]} &
-			{\href{mailto:enfiskutensykkel@gmail.com}{{{enfiskutensykkel}@gmail.com}}} \\
+			{\href{mailto:enfiskutensykkel@gmail.com}{{enfiskutensykkel}@gmail.com}} \\
 			\large{\faLinkedin} &
 			{\href{https://www.linkedin.com/in/jonasmarkussen}{{jonasmarkussen}}} \\
 			\large{\faGithub} &
@@ -180,15 +184,15 @@
 \end{minipage}
 
 \begin{minipage}[t][\colheight][t]{\lcolwidth}
-	\input{exp}
+	\input{exp}\unskip
 \end{minipage}%
 \hfill%
 \begin{minipage}[t][\colheight][t]{\rcolwidth}
-	\input{edu}
+	\input{edu}\unskip
     \vfill
-	\input{skills}
+	\input{skills}\unskip
     \vfill
-    \input{pub}
+    \input{pub}\unskip
 \end{minipage}
 
 \end{document}
