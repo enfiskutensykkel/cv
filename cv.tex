@@ -57,12 +57,11 @@
 \titlespacing{\subsection}{0pt}{0pt}{1em}
 
 
-% Set size of columns
-\newcommand{\hmargin}{2.4cm} % 1.8cm or more is ideal
+% Set height of title and info box minipage and column widths
+\newcommand{\titleheight}{2.4cm} % 1.8cm or more is ideal
+\newcommand{\colheight}{\textheight-\titleheight-1cm} % height is needed for vfill to work
 \newcommand{\lcolwidth}{.60\textwidth}
 \newcommand{\rcolwidth}{.35\textwidth}
-\newcommand{\lcolheight}{.87\textheight}
-\newcommand{\rcolheight}{.87\textheight}
 
 
 % Education
@@ -84,7 +83,7 @@
 % Position
 % Arguments: Title, from, to
 \newcommand{\position}[3]{%
-	\parbox{\linewidth}{%
+	\parbox{\textwidth}{%
 		{\ignorespaces \textbf{#1}}
 		\hfill
 		{\ignorespaces {#2}} --- {\ignorespaces {#3}}
@@ -112,7 +111,7 @@
 \newcommand{\shortexperience}[3][]{%
 	\parbox{\linewidth}{\ignorespaces #3}
 	\parbox{\linewidth}{\noindent\ignorespaces {#2}}%
-	\ifthenelse{\equal{#1}{}}{\bigskip\bigskip\smallskip}{}%
+	\ifthenelse{\equal{#1}{}}{\bigskip\medskip}{}%
 }
 
 % Publication
@@ -156,12 +155,12 @@
 
 \begin{document}
 \pagestyle{empty}
-\begin{minipage}[t][\hmargin][c]{\lcolwidth}
-    {\Huge\textbf{Jonas Markussen}}\\[1.1em] % huge (with lower case h) works best if the personal info box would be smaller
-    {\Large{R\&D Systems Software Engineer}}
+\begin{minipage}[t][\titleheight][c]{\lcolwidth}
+    {\huge\textbf{Jonas Markussen}}\\[1.1em] % huge (with lowercase h) works best if the personal info box would be smaller
+    {\Large{Researcher and Systems Software Engineer}} % Large (uppercase L, lowercase arge) is also better when the box is smaller
 \end{minipage}%
 \hfill%
-\protect\begin{minipage}[t][\hmargin][c]{\rcolwidth}
+\protect\begin{minipage}[t][\titleheight][c]{\rcolwidth}
 	\begin{adjustbox}{max width=\textwidth}
 	\fcolorbox{black}{infoboxcolor}{
 		\begin{tabular*}{\linewidth}{c|l}
@@ -180,11 +179,11 @@
 	\end{adjustbox}
 \end{minipage}
 
-\begin{minipage}[t][\lcolheight][t]{\lcolwidth}
+\begin{minipage}[t][\colheight][t]{\lcolwidth}
 	\input{exp}
 \end{minipage}%
 \hfill%
-\begin{minipage}[t][\rcolheight][t]{\rcolwidth}
+\begin{minipage}[t][\colheight][t]{\rcolwidth}
 	\input{edu}
     \vfill
 	\input{skills}
