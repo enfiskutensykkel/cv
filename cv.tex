@@ -141,10 +141,10 @@
 % Generic entry without a time period (skills, projects, etc)
 % Arguments: icon, title, description
 \newcommand{\entry}[4][]{%
-    \parbox[t]{\linewidth}{%
+    \parbox[m]{\linewidth}{%
         \ifthenelse{\equal{#2}{}}{\def\symw{0em}}{\def\symw{1.5em}}
         \ifthenelse{\equal{#2}{}}{}{\parbox[t]{\symw}{\small{#2}}}%
-        \parbox[t]{\linewidth-\symw}{\textbf{\noindent\ignorespaces{#3}}}
+        \parbox[m]{\linewidth-\symw}{\textbf{\noindent\ignorespaces{#3}}}
         \smallskip
         \parbox{\linewidth}{%
             \noindent\ignorespaces
@@ -160,7 +160,7 @@
 \addcontentsline{toc}{title}{Jonas Markussen}%
 \begin{minipage}[m][\titleheight][c]{\lcolwidth}
     {\Huge\textbf{Jonas Markussen}}\\[1.1em] % huge (with lowercase h) works best if the personal info box would be smaller
-    {\Large{Researcher and Systems Software Engineer}} % Large (uppercase L, lowercase arge) is also better when the box is smaller
+    {\LARGE{Cluster Computing Specialist}} % Large (uppercase L, lowercase arge) is also better when the box is smaller
 \end{minipage}%
 \hfill%
 \protect\begin{minipage}[m][\titleheight][c]{\rcolwidth}
