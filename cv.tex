@@ -109,7 +109,7 @@
 	\ifthenelse{\equal{\last}{true}}{}{\bigskip\bigskip\smallskip}%
 }
 
-% Short-hand command for experience (without explanation)
+% Short-hand command for experience (without contributions/accomplishments)
 % Arguments: Company, position(s)
 \newcommand{\shortexperience}[3][]{%
 	\parbox{\linewidth}{\ignorespaces #3}
@@ -146,7 +146,7 @@
         \ifthenelse{\equal{#2}{}}{}{\parbox[t]{\symw}{\small{#2}}}%
         \parbox[m]{\linewidth-\symw}{\textbf{\noindent\ignorespaces{#3}}}
         \smallskip
-        \parbox{\linewidth}{%
+        \parbox[t]{\linewidth}{%
             \noindent\ignorespaces
             \justifying{#4}
         }
@@ -160,7 +160,7 @@
 \addcontentsline{toc}{title}{Jonas Markussen}%
 \begin{minipage}[m][\titleheight][c]{\lcolwidth}
     {\Huge\textbf{Jonas Markussen}}\\[1.1em] % huge (with lowercase h) works best if the personal info box would be smaller
-    {\LARGE{Cluster Computing Specialist}} % Large (uppercase L, lowercase arge) is also better when the box is smaller
+    {\Large{Cluster Computing \& Systems Software Specialist}} % Large (uppercase L, lowercase arge) is also better when the box is smaller
 \end{minipage}%
 \hfill%
 \protect\begin{minipage}[m][\titleheight][c]{\rcolwidth}
