@@ -1,18 +1,14 @@
 \section[Experience]{\faBriefcase~~Experience}
-\begin{experience}{Dolphin Interconnect Solutions}{%
-    \position{Scientific R\&D Manager}{2023}{\phantom{0000}}
-}
-    \item{Leading a newly established R\&D team, continuing research and development of SmartIO as well as looking into CXL and next-gen PCIe.}
-\end{experience}
-
 \begin{experience}{Dolphin Interconnect Solutions}{
+    \position{Scientific R\&D Manager}{2023}{\phantom{0000}}
     \position{Software Architect}{2019}{2023}
     \position{Senior Software Engineer}{2018}{2019}
 }
-    \item{Responsible for making the SmartIO device sharing solutions from my PhD part of Dolphin's standard product line.}
-    \item{Implemented an NVMe device driver and block device interface on top of SmartIO, allowing multiple hosts in a PCIe cluster to share and simultaneously access NVMe devices without requiring virtualization.}
+    \item{Leading a newly established R\&D team, continuing research and development of SmartIO as well as looking into CXL and next-gen. PCIe.}
+    \item{Responsible for integrating the SmartIO device sharing solutions from my PhD into Dolphin's standard product line.}
+    \item{Implemented an NVMe device driver and block device interface on top of SmartIO, allowing multiple hosts in a PCIe cluster to share and simultaneously access NVMe devices without requiring virtualization.} % Also designed and implemented several memory locality optimizations for this distributed NVMe driver to minimize traffic over the PCIe fabric.}
     \item{Developed multiple shared-memory and RDMA-based tools for benchmarking the performance of data transfers in Dolphin PCIe clusters.}
-    \item{Contributed to two research papers on PCIe P2P and offloading a DPDK network card driver onto an FPGA and on a GPU respectively.}
+    \item{Contributed to two research papers on PCIe P2P and offloading a DPDK network card driver onto an FPGA and a GPU, respectively.}
 \end{experience}
 
 \begin{experience}{Simula Research Laboratory}{
@@ -20,8 +16,8 @@
     \position{PhD Student}{2015}{2018}
 }
     \item{Was a full-time PhD student until my scholarship ran out, and then completed the PhD on my own time while I worked for Dolphin.}
-    \item{Designed, implemented, and evaluated the SmartIO framework for high-performance, distributed I/O by making it possible for  host~machines in a Dolphin PCIe shared-memory cluster to disaggregate and share their internal I/O resources (PCIe devices and memory resources).}
-    \item{Extended SmartIO with Linux KVM hypervisor support using VFIO mediated device drivers, allowing physical devices to be assigned to VMs running on remote hosts in the cluster.}
+    \item{Co-invented the SmartIO solution for enabling a composable \& disaggregated infrastructure in Dolphin PCIe-based shared-memory clusters. Using SmartIO, host~machines in a Dolphin cluster can disaggregate and share their internal host~memory and PCIe devices (such as GPUs, NVMes, FPGAs, ...). By allowing hosts to use shared, remote resources as if they were locally installed, SmartIO facilitates efficient and flexible resource sharing with extremely low overhead and without requiring changes to existing device drivers and application software.}
+    \item{Extended SmartIO with Linux KVM hypervisor support using VFIO mediated device drivers, allowing physical devices to be assigned to VMs running on remote hosts in a Dolphin cluster.}
     \item{Developed a CUDA/C++ library for SmartIO with GPUDirect support, and, as proof of concept, implemented a userspace NVMe driver that enable GPUs to initiate reading and writing from storage independently of CPUs (driver offloaded onto GPU), and moving data from remote NVMe devices anywhere in the cluster directly into GPU memory.}
     %\item{Identified performance bottlenecks in SmartIO through extensive experimentation, and implemented several optimizations that reduced the latency overhead of remote memory access to near-zero (\textless 50~ns).}
     \item{Published 5 academic papers about SmartIO, including a paper in ACM TOCS, a flagship journal on distributed computer systems.}
