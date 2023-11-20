@@ -16,20 +16,21 @@
     \position{PhD Student}{2015}{2018}
 }
     \item{Was a full-time PhD student until my scholarship ran out, and then completed the PhD on my own time while I worked for Dolphin.}
-    \item{Co-invented the SmartIO solution for enabling a composable \& disaggregated infrastructure in Dolphin PCIe-based shared-memory clusters. Using SmartIO, host~machines in a Dolphin cluster can disaggregate and share their internal host~memory and PCIe devices (such as GPUs, NVMes, FPGAs, ...). By allowing hosts to use shared, remote resources as if they were locally installed, SmartIO facilitates efficient and flexible resource sharing with extremely low overhead and without requiring changes to existing device drivers and application software.}
-    \item{Extended SmartIO with Linux KVM hypervisor support using VFIO mediated device drivers, allowing physical devices to be assigned to VMs running on remote hosts in a Dolphin cluster.}
-    \item{Developed a CUDA/C++ library for SmartIO with GPUDirect support, and, as proof of concept, implemented a userspace NVMe driver that enable GPUs to initiate reading and writing from storage independently of CPUs (driver offloaded onto GPU), and moving data from remote NVMe devices anywhere in the cluster directly into GPU memory.}
+    \item{Co-invented the SmartIO solution for enabling a composable \& disaggregated infrastructure in Dolphin PCIe-based shared-memory clusters, allowing host~machines in such clusters to disaggregate and share their internal host~memory and PCIe devices (such as GPUs, NVMes, FPGAs, etc.). %
+        As hosts can use remote resources over native PCIe as if they were locally installed, SmartIO facilitates efficient and flexible resource sharing with extremely low overhead and without requiring changes to existing device drivers or application software.}
+    \item{Extended SmartIO to support assigning physical devices to VMs running on remote hosts in a Dolphin cluster, by adding support for the Linux KVM hypervisor using the VFIO mediated device driver API.}
+    \item{Developed a CUDA/C++ library with GPUDirect support for interfacing with the low-level functionality of SmartIO, and, as proof of concept, implemented a userspace NVMe driver using this API that enable GPUs to initiate reading and writing from storage independently of CPUs and moving data directly into GPU memory (driver offloaded onto GPU).}
     %\item{Identified performance bottlenecks in SmartIO through extensive experimentation, and implemented several optimizations that reduced the latency overhead of remote memory access to near-zero (\textless 50~ns).}
     \item{Published 5 academic papers about SmartIO, including a paper in ACM TOCS, a flagship journal on distributed computer systems.}
 \end{experience}
 
-\begin{experience}{Bridgetech}{\position{Software Developer (systems software)}{2014}{2015}}
+\begin{experience}{Bridgetech}{\position{Software Developer (C++)}{2014}{2015}}
     \item{Contributed to a solution using libpcap for live capturing OTT/IPTV traffic and parsing out MPEG transport streams sent over RTP.}
     \item{Implemented a parser for MPEG video streams to extract and validate closed captioning data and provide real-time event notifications in case of missing or corrupted data.}
 \end{experience}
 
 \shortexperience{Fotoware}{
-    \position{Software Development Engineer (web back-end)}{2013}{2014}
+    \position{Software Development Engineer (C++/Python)}{2013}{2014}
     \position{Front-end Web Developer}{2011}{2013}
 }
 

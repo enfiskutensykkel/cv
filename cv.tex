@@ -30,6 +30,7 @@
 	pdfauthor={Jonas Markussen},
 	pdfsubject={CV for Jonas Markussen},
 	pdfkeywords={resumé, résumé, curriculum vitae, CV, experience, education, software, enfiskutensykkel,
+    interconnect, HPC, cluster computing, high-perfomance computing, embedded, programming, device driver,
 	engineer, developer, Linux, NTB, PCIe, GPU, NVMe, SSD, RDMA, networking, IP, TCP, TCP/IP, C, C++, Python},
 	%pdfpagemode=UseOutlines,
     pdfpagemode=UseThumbs,
@@ -106,7 +107,8 @@
 }{%
 	\ignorespacesafterend
     \end{itemize}
-	\ifthenelse{\equal{\last}{true}}{}{\bigskip\bigskip\smallskip}%
+	%\ifthenelse{\equal{\last}{true}}{}{\bigskip\bigskip\smallskip}%
+	\ifthenelse{\equal{\last}{true}}{}{\vfill}%
 }
 
 % Short-hand command for experience (without contributions/accomplishments)
