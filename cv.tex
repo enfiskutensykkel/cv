@@ -16,6 +16,7 @@
 \usepackage{ifthen}
 \usepackage{xcolor}
 
+% Uncomment this to show the margins as a frame
 %\usepackage{showframe}
 
 % Make text dark gray instead of black
@@ -72,14 +73,14 @@
 % Education
 % Arguments: Degree, from, to, institution, additional explanation
 \newcommand{\education}[6][]{%
-	\parbox[t]{\linewidth}{%
+	\parbox{\linewidth}{%
         %\parbox[t]{1.5em}{\small{\faGraduationCap}}%
-		\parbox{\linewidth}{%
+        \parbox[b]{\linewidth}{%
             {\ignorespaces \textbf{#2}}
 			\hfill
 			{\ignorespaces {#3}} --- {\ignorespaces {#4}}
 		}
-		\smallskip
+        \smallskip
 		\parbox{\linewidth}{{\ignorespaces {#5}}}
 		\parbox{\linewidth}{{\ignorespaces {#6}}}
 	}\ifthenelse{\equal{#1}{}}{\bigskip\medskip}{}
@@ -88,7 +89,7 @@
 % Position
 % Arguments: Job title, from, to
 \newcommand{\position}[3]{%
-	\parbox{\textwidth}{%
+    \parbox[b]{\textwidth}{%
 		{\ignorespaces \textbf{#1}}
 		\hfill
 		{\ignorespaces {#2}} --- {\ignorespaces {#3}}
@@ -107,8 +108,8 @@
 }{%
 	\ignorespacesafterend
     \end{itemize}
-	%\ifthenelse{\equal{\last}{true}}{}{\bigskip\bigskip\smallskip}%
-	\ifthenelse{\equal{\last}{true}}{}{\vfill}%
+	\ifthenelse{\equal{\last}{true}}{}{\bigskip\bigskip\medskip}%
+	%\ifthenelse{\equal{\last}{true}}{}{\vfill}%
 }
 
 % Short-hand command for experience (without contributions/accomplishments)
@@ -116,7 +117,7 @@
 \newcommand{\shortexperience}[3][]{%
 	\parbox{\linewidth}{\ignorespaces #3}
 	\parbox{\linewidth}{\noindent\ignorespaces {#2}}%
-	\ifthenelse{\equal{#1}{}}{\bigskip\medskip}{}%
+	\ifthenelse{\equal{#1}{}}{\bigskip\smallskip}{}%
 }
 
 % Publication
